@@ -1,0 +1,534 @@
+			API Testing Notes
+xj--> API stands for Application Programming Interface or Application Pheripheral Interface
+
+Chking the feature funtinality of application without UI is called API
+
+--> There are 2 types of API 
+
+	1. coding level API
+	2. communication level API
+
+	1. coding level API:- 
+		--> This api exist in the form of jars
+		--> This api is a collection of classes & Interfaces
+		--> e.g. JDBC, Servelet, Apache poi etc
+
+	2. communication level API :- 
+		--> This Api are exist in the form webservices
+		--> This api's is are mainly responsible for communication of applications
+		--> Webservices are developed by xml or json programming language
+
+
+--> API Testing :- 
+	--> Testing the application in a bussiness layer is called API testing
+	--> Testing the features without presentation layer(UI) is called as API Testing.
+
+--> Browser & server are interacts with each other via http request & response
+    whereas 2 application are interacts with each other via webservices.
+
+--> In a API-WebServices business there are 2 participants:-
+
+	1. Webservice producer
+	2. Webservice consumer
+
+	1.Webservice producer :- Who creates the webservice to access a feature is called as Webservice producer.
+		--> e.g. google map, Indigo airlines..etc
+
+	2. Webservice consumer :- Who use the fetures of another application is called as Webservice consumer.
+
+		--> e.g. swiggy, ola, uber..etc
+
+
+
+
+--> Advantages of webservices:- 
+
+	1. Due to webservices, 2 different application can communicate with each other by transfering
+ 	   the data.
+
+	2. WebServices are platform Independent, so that 2 different application which operates on
+	 	   differnt platform can interact with each other.
+
+	3. WebServices  are loosely coupled. bcoz same webservice or api can be use by many application
+
+	4. Due to webservices , No need of reinvent the same wheel or feature.
+
+	5. It generates a business opportunity.
+
+
+--> What is URL & URI?
+
+		--> URL is stands for Unified Resource Locator
+			url is locating the server
+
+		--> URI is stands for Unified Resource Identifier
+			uri is identifying the feature present inside the server
+
+--> Types of WebServices API's or Communication Level Api:- 
+
+	--> There are 2 types of webservices api:- 
+		1. soap api/ws :- If two application are transferring  the data via xml language then it
+ 				  is considered as soap api/ws.
+		
+		2. rest api/ws :- If two application are transferring the data via json language then it
+ 				  is considered as rest api/ws.
+
+
+--> XML Language :- 
+
+	--> It stands for Extensible Mark-up Language.
+	--> Xml  is a programming language which is to store & transfer the data from one applcation to 
+			another application (i.e. creation of webservices)
+	--> xml language is exactly similar to html language in terms of looks.
+	--> Html is a collection of predefine tags whereas Xml is a collection user define tags
+
+<html>							<Employee>
+	<title>Sample Link</title>				<name>Satish</name>
+	<body>							<empId>20</empId>			
+		<a href=""> Link </a>				<salary>20000</salary>
+	</body>							<designation>TE</designation>
+</html>							</Employee>
+
+
+	--> Html is not a Strictly typed language whereas Xml is strictly typed language i.e. every open 
+			tag must be closed.
+	--> HTML is case insensitive whereas xml is a case sensitive programming lang
+
+
+
+
+
+
+ JSON Language :- 
+
+	--> It stands for JavaScript Object Notation
+	--> Json language is a extension of javascript programming language
+	--> As name  implies, here data or information store & transfer in the form of objects
+
+	--> xml view of data :- 
+
+		<Employee>
+			<name>Anuj</name>
+			<id>13</id>
+			<designation>TestEngineer</designation>
+		</Employee>
+
+
+	--> Json view of data :-
+
+		"Employee" : {
+				"name" 		: "Anuj",
+				"id"   		: 13,
+				"designation" 	: "TestEngineer",
+
+				"PhoneNum"	: [111111,22222,333333]
+			     }
+			
+	--> Rules & Terminologies of JSON:- 
+
+		--> JSON always store data in the form of key value pair
+		--> In JSON, 
+	
+			{} -->  Its consider as object
+			:  -->  Its consider as K V separator
+		    K : V  -->  Its consider as one entry
+			,  -->  1. Its consider as entry separator.
+				2. after comma entry must be present otherwise we will get error.
+				3. if entry is present after previous entry then that entry must be
+			   		   ended with entrySeparator (,) otherwise we will get error.
+			[] -->  1. its consider as array
+				2. Used to allocate multiple values for same key
+
+
+
+Data Types in JSON:- 
+
+	--> Keys are always in string form only
+	--> Values :-	Object
+			array
+			String
+			int
+			null
+			double
+			boolean
+
+
+
+
+*** Request & Response Parameter :- 
+
+--> Request Parameter :- 
+
+	--> Every request divides in 2 section :- 
+		1. request header
+		2. request body
+	--> There are 4 important parameters which needs to be understood :- 
+
+	1. URI
+	2. HTTP Method
+	3. Content Type
+	4. Form data	
+
+1. URI:-
+It stands for Unified Resource Identifier.
+
+2. Http Method :- 
+
+	--> Http methods are decides what type of action will perform by request in a server	
+	--> Its a mandatory parameter in a any type request
+	--> without http method we cant send any request
+
+	--> Http methods are :- 
+		
+	1. GET 
+	2. POST
+	3. PUT		  Api Testers will used this methods for testing
+	4. PATCH
+	5. DELETE
+
+
+
+
+
+	1. GET :- Fetch data from server or application
+
+	2. POST :- Create or add the new data or resource in a server or application
+
+	3. PUT :- Update the data or resource present in a server or application completly
+		  Here it will remove all old data & keep only new data
+
+	4. PATCH :- Update the data or resource present in a server or application paratially
+		    Here it will keep new data with a old data
+	5. DELETE :- Remove the data from server or application
+
+
+
+
+--> CRUD Operation in API :- 
+
+	create --> POST
+	
+	read --> GET
+
+	update --> PUT/PATCH
+
+	delete --> DELETE
+
+
+3. ContentType :- 
+
+	--> Its decides what type of data is tranferring in a server
+	--> ContentType is optional parameter in request
+	--> For GET & DELETE request content type is not required but for POST,PUT,PATCH its mandatory parameter.
+
+
+4. Form data :- 
+	--> It will be present in a body part of request
+	--> The data which we will transfer in a PUT, POST, PATCH request is consider as form data
+	--> Its a optional parameter in request
+	--> For GET & DELETE request content type is not required but for POST,PUT,PATCH its mandatory parameter.
+
+
+---> Response  Parameter :- 
+
+	There are 4 response parameters 
+	1. status code
+	2. contentType
+	3. response time
+	4. actual content	
+
+1. status code :- 
+
+	--> Its a mandatory parameter inside response header
+	--> There are 5 series of status code
+
+	1. 100 :- Request is in continue stage
+
+	2. 200 :- Request successfully pass
+
+	3. 300 :- Request is redirected 
+
+	4. 400 :- Client (Requester) side error 
+
+	5. 500 :- Server side error
+
+	--> Status code represents the status of a request which takes place in server
+
+2. Content Type :- 
+
+	--> Its a mandatory parameter in response
+	--> Every response will have the content type
+	--> Basically it represent the type of data present in response body
+	--> For soap --> application/xml
+	--> For Rest --> application/json
+
+
+3. Response Time :- 
+
+	--> It represents the time taken by request to get the response in a server
+	--> This response time is always in millisecond
+
+4. Actual content :- 
+
+	--> The real data present in a response body is consider as actual content
+	--> Its mandatory parameter in response
+
+
+---------------------------------------------------------------------------------------------
+----> Rest Api / Rest webservice :- 
+
+	--> If a api or webservice use json language for communication then it is consider as Rest Api 			    or Rest webservice.
+
+	--> Rest is a architecural style to store & transfer the data
+
+	--> Rest stands for Representation state transfer.
+
+	--> now a days rest more logical approach used for commuincation of applications
+
+	--> Why Rest is preferred over soap? 
+
+		--> soap (simple object access protocol) is protocol dependent where as rest is
+ 		     protocol independent. due to this we can access rest api from any where(browser, 
+		   		    postman, soapui, mobile)
+
+		--> rest is light weighted than soap
+
+		--> rest is very easy to understand data as compare to soap
+
+
+
+--> Postman :- 
+
+	--> Its open source api testing tool which is widely used for api testing
+
+	--> Basically postman is a external google chrome plugin but to use all the features of postman
+ 	    its preferable to go for desktop application of postman
+
+	--> Its a UI based api testing tool which having highly user friendly GUI
+
+
+
+
+
+--> Assertions In Postman :- 
+
+	--> Assertions are used for validation purpose in api testcases
+	--> here we can validate
+
+		1. status code
+		2. contentType
+		3. response time
+
+	--> In postman , readymade snippets are present which we can used for assertion
+	--> This snippets are present in groovy script language
+
+
+--> Batch Execution in Postman :- 
+
+	--> Executing all test case one after another is called as batch execution
+	--> To perform batch execution we need to  collection runner.
+
+	--> Collection runner is a advanced feature present in postman which perform batch execution .
+
+	--> Steps to perform batch execution:- 
+
+	1. click on forward arrow mark on a project
+	2. click on run button
+	3. we will collection runner window. In this window based on requirement we can make changes
+		like number of iteration, delay period in execution, environment selection 
+		(But normally we will not make any changes . its not required)
+
+	4. click on Run button in collection runner window
+	5. In collection runner we can get the batch execution result based on number of assertion 
+	   present in test cases.
+
+--> To get the execution result based on testcases we need to "postman console" tool
+--> To see the result in postman console  we need to open it before executing test cases
+--> To open postman console--> click on view--> show postman console
+
+
+
+
+
+
+
+- Main ideas About Postman:
+Postman is a tool that allows us to easily work with APIs.
+Postman is used to build HTTP requests that we send to the server running the API.
+
+
+
+
+
+
+
+ Installation of postman::::
+There are two ways to run Postman:
+As a standalone app or
+Directly in the browser
+
+We can work with Windows, macOS and Linux.
+
+Download Postman App
+Open Postman on the web
+Postman Desktop Agent (scroll down)
+Lesson 4 - Your first request with Postman
+
+A status code 200 (or any status like 2XX) indicates that the request was successful.
+
+
+
+ HTTP Methods
+
+
+
+
+The API we are using uses the HTTPS protocol.
+HTTPS stands for Secure Hypertext Transfer Protocol.
+HTTPS ensures that the connection is encrypted.
+All APIs should use HTTPS.
+From our point of view HTTP and HTTPS are the same.
+The HTTP request message will contain:
+URL (address)
+Request method (GET, POST, PUT, ...)
+Headers (User-Agent: Postman)
+Body
+The HTTP response message will contain:
+Status code (200, 404, 500, ...)
+Headers
+Body
+
+
+
+
+
+Postman collections and variables
+
+You can save requests so that you can re-use them later on.
+All requests need to be added to a Postman collection.
+Typically you will have a Postman collection for each API.
+We are storing the base address of the API in a collection variable called baseUrl.
+Our saved baseUrl will be displayed as {{baseUrl}} in the address bar.
+Variables allow us to avoid repeating the same information.
+Variables allow us to easily make changes.
+A Postman variable has two states
+INITIAL VALUE - This will be available to others if you share the collection.
+CURRENT VALUE - This is private to you and this is the value that Postman uses.
+
+
+Querry Parameter::
+
+
+JSON is the most popular format that APIs use to send data.
+Query parameters start after the ? in the URL.
+example : {{baseUrl}}/books?type=fiction
+The format is key=value
+
+Depending on the API, some query parameters can be optional or mandatory.
+A response status 400 indicates an issue with the request data.
+You can enable and disable parameters by clicking the checkbox associated with each key-value pair.
+
+
+
+
+JSON format
+
+You need to specify valid JSON, otherwise the server won't understand your request.
+Use double-quotes "" for strings, separate key-value pairs with a comma sign ,
+Numbers, booleans don't need to be between quotes.
+Postman will indicate when your JSON is invalid.
+
+You can use a special type of Postman variable to generate random data
+example: {{$randomFullName}}
+To inspect the request body you can use the Postman console.
+
+
+
+
+
+
+We are looking at the response to understand if the API is working properly.
+With API tests we want to avoid manually re-testing the API.
+Tests in Postman are written in JavaScript.
+Tests are executed ONLY after the response has arrived from the API.
+Postman uses an assertion library called Chai.js
+Testing the response status code is one of the easiest tests you can write.
+When writing tests, we want to make sure the tests fail.
+To make the assertions on a JSON response, you first need to parse it.
+To see the contents of a JavaScript variable you can use console.log()
+To get a property of an object, you can use this syntax: someobject.someproperty
+alternative syntax: someobject["someproperty"]
+
+
+
+Varibales:::
+
+Postman variables are fundamental to automating testing of the API.
+Postman environments (environment variables) are good if you have multiple testing environments (localhost, testing, production)
+Postman collection variables are saved in the collection.
+Postman global variables are available to all collection in a workspace.
+We use Postman global variables as the data we save is not that important after the execution has stopped.
+
+ Extracting data from the response
+
+COLLECTION RUNNER
+
+The Collection runner is a built-in functionality of Postman.
+The Collection runner allows you to execute the entire collection with just one click.
+ 
+
+Request execution order::
+
+If you run a Postman collection, the default order is as you have it in the collection.
+You can change that order if you use postman.setNextRequest and specify the name of the next request
+If you wish to stop the execution prematurely, you can so so by running postman.setNextRequest(null)
+
+
+
+
+
+
+
+Creating a Postman monitor ensures that you can run a Postman collection according to a pre-defined schedule.
+Running the collection will be handled by Postman on their infrastructure, you don't need to keep Postman open.
+If you are not familiar with continuous integration servers like Jenkins, GitLab CI or TeamCity, this is a quick and easy way to access a Postman collection.
+The API needs to be accessible from any network.
+
+
+L Newman
+
+Newman is a CLI tool that can take a Postman collection, run all the tests and generate a report at the end.
+Newman does not have an interface, you need to work with it from the terminal.
+Often Newman is installed on an integration server like Jenkins, GitLab CI or TeamCity.
+To run Newman on your computer, you need to have Node.js installed.
+you can download Node.js from https://nodejs.org/ (download the LTS version)
+To install newman, run the command: npm install -g newman
+Check if newman is install with: newman --version
+Export the collection as a JSON file.
+Share with a public link.
+
+
+DataProvider:
+It means fetching the data from external resource and utilising it our script is called  DataProvider.
+
+It can be done by going in collection and then in Runner file
+
+Authentication 
+It is a token 
+
+URI- https://postman-echo.com/basic-auth
+
+admin-postman
+password-password
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+How to add Random String  in java Script?
+
+var rendomMath.ramdom().toString(36).substring(2);
+
+var useremail ="jim"+random+"@gmail.com";
+
+var username="jim" +random;
+
+pm.environment.set("email_env",useremail);
+pm.environment.set("name_env",username);
+
+Now use the environment variable in Post request
+{
+
+"name":"{{name_env}}",
+ "gender":"male",
+ "email":"{{email_env}}",
+  "status":" inactive"
+}  
+Send the request we will get different differnt emailID and name
+So every time we will get new 	ID so we have to store the ID in Tests
+
+ var jsonData=JSON.parse(responseBody);
+ pm.environment.set("userid_env".jsonData.id);
+Now use this ID in other request as Get,Delete,Put.. 
+
+Now we need to compare wetther Get and POST data are same or not So we will compare
+
+So Get response whatever we are getting must be equal to what ever we pass in POST request. 
+
+
+Now We will go to Get and click on Tests
+
+Here we will get the response body of JSON  to validate between JSON fields and response..
+
+pm.test("value of JSON fields",() =>{
+pm.except(jsonData.id).to.eql(pm.environment.get("userid_env"));
+pm.except(jsonData.email).to.eql(pm.environment.get("useremil _env"));
+
+
+
+}
+
+};
+Now same We go for PUT so in put we need to update so again we will go to pre-request and we will send 
+the same data which we send in POST i.e genrated variable same this we will go here
+No execute the Entire Collection we will get every thing pass...
+
+Now we need to delete all the variables from environment variable...
+
+pm.environment.unset("userid_env");
+pm.environment.unset("email_env");
+pm.environment.unset(name_env);  

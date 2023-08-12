@@ -1,0 +1,32 @@
+ Challenges of Automation:
+
+1-Images or text overlapping issue..
+2-Challenges in frames(Componestes are present in different frame so lot of type we have to switch).
+3 -In my apploication there was third party calendar was there which was creating problem for me. .
+4-Dealing with popup is challenge..
+5-Timeout resulting from Synvhronisation problem:We have identified selenium.isElementPresent(locator)..
+6:- What is Monkium?How to handle flash Objects?
+7:Cross Browsing in testing application issue..
+8:Compatibility issue with version...
+9:Difficulty in Identify Objects..
+10:It is not supporting stand ALONE APPLICTION..
+11:Here we have to go with E to E flow my test script must not be failed.. 
+12:Proper data we have to make 
+13:Synchronisation isses were there..
+14:Regression suites are there whuch we need to debugg..
+15:Nullpointer exception was very painful for this we neeed to debug the code.
+16: Chrome driver version 83 is not capable to generate the screen shot  when it runs with jenkins.
+17:Manu of the times the script was getting failed due to script.
+18:Team integration problem.Changes done by devloper was not informed to QA
+     as and when it happens..
+
+Challenges faced in Testing::::::::
+
+In my project One time I got a bug then devloper was not accepting the bug then I prepared the proper document
+then We had a meeting with devloper and TL then issue resilved.
+ 
+In one test cases I got a inconsistent bug it was changing every time.Then it was very diffecult to show me..
+Then I have taken executed the same testcase multiple times and took the sceenshot of all the scenario and shown 
+them to devlopers..   
+
+

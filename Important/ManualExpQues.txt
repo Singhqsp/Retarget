@@ -1,0 +1,305 @@
+ Question?
+When You are showing the demo to the clint onr bug came What we will do?
+
+That time i will check the test evident document(Apart of them team other are ther)
+
+CRCT answer=>Tested earlier we will test it again may be some link is broken of after 
+retesting i will show u again.
+
+ques=>We Got one user story and after geting it we have a groming session then also 
+I am not understating then whai i will do?
+
+Ans-If not understatind then imiditly we have to colleborate of BA, TL, Other team member
+understatnd then also we can go
+Also talk to devloper weather they are getting same thing
+
+API Ques-In the frontent we fill user name, pwd, and check but how we will test 
+in Backend with API with end point?
+We will identify the parameter ,then we will fill the username and password
+then we will hit by using API by GET.....
+
+Invalid username and password fill response code must not be 200
+
+NO parameter and fill the API it should have no API.
+
+What is Dynamic Token in API?
+
+Difference between global,local and colllection Varable?
+
+Global->General purpse varable
+
+Collection-Contans data carable-URL,UN,PWD
+
+Local Varible-Only for that perticular instatnce
+
+Ques-How will we itrate requests 100 times?
+Collection Runner
+
+Ques-Usung google map postive test Scenario  and negative for google?
+
++ve:
+verify user shold enter city
+verify autosugestion name shoud display
+verify multiple route is showing
+veirfy distence and time   
+
+
+Ques-How many types of WebDriver API are there?
+ChromeDriver(), HTMLDriver(),AndriodDriver(), 
+
+
+=>High level test Scenario of your WebAplication(Ecommerce).
+   
+   Ans-Tell End to end flow->Login ,search add tocart payment
+   
+           Credit card negative test scenarios.
+ 
+           Amount Deducted
+
+ => Tell me one deffect which was appriciated by everyone?
+
+      Additing product to cart number was not increasing in that cart
+       number ,so it was high severity.
+
+=>If any search is dynmic in testcase how will we verify.
+     How will be test stategy?
+
+     ans-What we have to verify, We have to create multiple test data
+             varify the brand is working with shirt
+             varify the brand is working with colour.
+             filtering of searching the shirt from expensive to inexpensive
+             
+
+Ques:What are the types of testing U have done in your company?
+ana-Basically I was involved in Funtional tesing and Non funtional testing
+But it depends on the requirement some time I have to go for retesting and also GUI testing also
+
+ Ques What is GUI testing?
+   The process of insuring proper funtinality of grafical user interface is GUI
+    
+    I have done GUI testing by shape,position colour,font size etc..
+  
+  Test case 12 – Verify that there must be a proper error generated if something has been mistakenly chosen.
+
+Test case 13 – Verify that the error must be generated in the RED color wherever it is necessary.
+
+Test case 14 – Verify that proper labels must be used in the error messages.
+
+Test case 15 – Verify that the single radio buttons must be selected by default every time. 
+   
+
+What we will do if bug is found in production server?
+
+Start the analysis->QA is responsible
+Add bug to jira 
+
+Share in slack groups
+(What is slack groups?)
+Slack groups allow users to communicate with multiple 
+key team members across workspaces, channels, and direct messages without leaving the application. This article will examine how Slack groups work, their advantages and uses, and how to set them up for your organization 
+
+QA and Dev will work on RCA(Root cause analysis)..
+
+Fill RCA and share with stake holders 
+ 
+Add missing TC to TMT(Test missing tools) and automate flow.. 
+
+(Stakeholders are product manager desigener)
+     
+
+
+What to do if stakeholder say Take X day and relese the project? 
+
+Prepare test estimation sheet
+ Show them with data How many testcases we have done.With Bandwidth How many we can do
+  Let them know about the risk of doing hurry and missing the testing area
+  Now check with priority level
+ 
+  MODULE VS TESTING EFFOR BY HOUR
+  MAIN HOURS IN SCRUM AGILE.. 
+
+Ques:If I was working in your company and I given my test cases to review to thwn which are the points
+          we are going to notice?
+=>Fistly I will check all the postive field and also I will check the test tecnicq U are using and if testCases 
+     are 70 to  80 acurate the I will go for test Excecution.
+
+Ques-Consider a scenario  U forund one bug on friday,Fix will take time how to manage the time?
+If cretical bug I found then I will expect he will devloper to fix the deffect till that time i will see the main funtionality which is going to 
+effect and complete the scenario and as soon Devloper dix I will check with higher severity and priority..  
+
+If devloper fix on Saturday? At this situation I will go with saturday and suday if the relese is on Monday...
+
+Ques:How much time it takes to prepare a trceibility matrix?
+
+What is acceptence criteria?
+Apication is satifing all the client criteria-->
+Non funtional must be also acceptence criteria
+
+If there is a relese with in one week and user given some new funtinality then?
+In funtinlity way we can fullfill the aceptence criteria but in non funtinality type it will be diffecult[how much user using then it will be difficult]..  
+
+
+Ques-In office daily we have daily scrum meeting for progress of project can U tell  me what happen on daily bases?
+
+Daily scrum meeting is conducted by our scrum master for 15 to 20 min.In that meeting we have to discuss what was the yesterday 
+task,What is today task and what we can do in upcoming days to reach to the current relese .If any showstopper(It is a bug) is there
+then our Scrum master is going to help about it.... 
+
+Can you tell me one example if you are facing any issue and disciss with your scrum master and u got the sulution?
+yes there was one bug for amount field in that I was giving the number in decimal then It was accepting with round figures 
+which was a bug because it was creating the huge differecne so when i discuss with my concert devloper he told me you do not know
+the requrement the this bug I told in Scrum meething and discuss with my scrum master he told yes I am crct.. 
+
+ques-If you join in current company then there are many complex scenarios then what we will do first?
+I will first go tho the Test Docement and also I will prefer Old Jira  
+
+
+How do you log diffecy or bugs in jira in jira?
+First I will create a user story or genrate the ticket or log the diffect ,provide the summary of the diffect,take the screenshot,In which environment
+,In which sprint it will be fix...
+
+Differencw bw verification and validation?
+Varification is to verify the document and validation means done after app is relesed means performing differemt testing..
+
+What was the testing stategy for Food Ordering website..?
+Ans ->What devices we will use for testing,which browser we go,How many users are there in Concurent
+      Scope of testing->Chinese food or mix of all
+      who will be writin test document 
+      What test cases are automatable...
+
+What is SRS?
+SRS- Software requiremwnt specifitaion
+When ever we are getting project we will get document ..BA will go to the client and all languages 
+Testter or devloper is requred>
+It is used to understand the project funtinality from bussiness and funtional point of view.. 
+
+What is Test Case
+It is a set of input though which we can check the funtinality osf appllication.
+
+What is Tracebility matrix? 
+It is a relationship between your requrement and test Cases ..
+It is a mapping between req,, and TC for all component..
+
+
+What is Fuzz testing?
+It is testing in which we are bacically defecting the security loop hole..
+And attept is made to crash the system 
+
+ Lets take an example of birth date which is affecting from 2000 to 2005 then
+ we will give as 1990 and try to crash the testing 
+It is a type of testing which is ued to check that wether vulnarabity is there or not  
+
+Is monkey testing reliable?
+It is not reliable that is why in my company it was done by the biginners.
+
+Security Testing:
+In this testing we check all the passwrods are secured they donot get compramised
+Third party can not see the password...
+
+Stress Tesing:
+Beyod the limit we test the application is stress Testing..
+Load Testing
+Id testing is with in limit is called load testing..
+
+What is Unit testing and integratio testing?
+Unit testing is first stage of testing which is done at the initial stage of testing
+and it is done by devlopers where he is checking the code...
+
+
+On what basis we idntify the test Scenarios in a RAW data?
+There are two aspect of this question
+
+We will identify the test scenario
+Bases on GUI
+We can identify by using NFT like performance..
+
+If I too an application that was working fine in Friday evening but it stopped in Saturday then what we will do?
+=>We will check by clearing the cache and troubleshooting..
+=>Size of goggle drive
+=>What kind of file is not getting uploded..
+=>What type of file is not uploded ,is it with version issue..
+=>Test with mobile
+
+What we get any bug in production envirinment then what we will do?
+
+Here we will idnetify the root cause of that bug,We will also buffecate weather it is really a issue or it is a kind
+of enhancement or due to new requirement it arised that came from client side..
+
+Consider we found the bug in production environment and now You want to repraduce the bug then what will
+be the stategy?
+->Firstly we willidentify the root cause
+->cHECK THE  perticular issue about
+->Then we will test that component or module again and check any new test case is required or not
+->Then before giving to devlopers we will give some inputs like test-reprt logs(what is the issue ).. Screenshot regarding the issue..
+
+Ques-There is an Ecommerce websites which was working fine till yesterday but today it is taking more time so what are the steps 
+  you will take for this?
+
+We will check the metrics dash board which shows us sudden fall in order processing.
+Check dashboard is working properly or not,because if the failt is in dashboard module then we no need to deeg further..
+
+2->Check if new build is relised which caused problem,roll back the new change immiditly as its causing direcr impact in customer..
+
+3->check if there is any modules which can cause the bug in order processing module which was relsased yesterday onto production.
+
+4->Check network configuration issues in certain countries,because amazon is global company and if the server is down in USA or india
+,it may cause huge downfall...
+5->Check if any amazon deploy componenets are down like load balancers or other AWS services..
+
+Ques->It is a friday and I got one skype msg form client that one funtinality is not working then what we will do??
+
+>>>>In such type of scenario we have two scenario::: 
+ scenrio1 Defect repraduceble 
+->First i will check the bug from my side weather it is a bug  or not
+                  I will check with different browser,different users I will check it
+                  Is there any devlopemnt happend in last 24 hours
+                  Is there any regression issue
+        If it a issue then check the sevurity of that issue(weathe fixed now or future)
+
+ scenrio2 Defect  not repraduceble
+   While checking if deffect is not repraduceble then
+     I will tell to client to follow the steps and it will be done.. 
+
+https://www.youtube.com/watch?v=DxOt3xWQR4w
+
+https://www.youtube.com/watch?v=IwurRbgvHjU
+
+https://www.youtube.com/watch?v=T123X_nBjIA
+
+
+What is QC Audit?
+
+Quality control auditors are responsible for monitoring the quality of a company's process and products, 
+making sure they meet the required standards. 
+They devise the parameters by which they can adequately measure quality depending on the specifics 
+of production processes
+
+
+
+
+ 
+
+
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

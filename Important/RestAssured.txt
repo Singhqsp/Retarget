@@ -1,0 +1,112 @@
+ How many ways are we create request body?
+1)Hashmap
+2)using org.json
+3)using POJO(Plain Old Java Object)
+4)Using external json file
+
+
+First we will focus on Post request
+
+We will work with student  Json dummy API::
+
+Lets Create  new class
+
+ paste the previous packages
+
+In hasmap and JSON we have value in KEY:VALUE pair
+
+class DiffWaysToCreatePost
+{
+  @Test(priority=1)
+   void testPostUsingHashMap()
+     {
+       //According to JSON put the data in Hash map
+         
+        HashMap data = new HashMap();
+        data.put("name","Scoot");
+        data.put("location","France");
+        data.put("phone","123445");
+        //It is a array form of storing data
+        String courseArr[]={"C","C++"};
+        data.put("cources",courseArr);
+    
+        given()
+             .contentType("application/json")
+             .body(data)
+       when()
+             .post("http://localhost:3000/students")
+       then()
+             .statusCode(201)
+             //Verify the resposnse
+            .body("name",equalTo("Scott"))
+            .body("location",equalTo("France"))
+            .body("phone",equalTo("123456"))
+            .body("cources[0]",equalTo("C"))
+            .body("cources[1]",equalTo("C++"))
+            .header("Content-Type","application/json; charset=utf-8")	 
+            .log() .all();
+     
+ 
+     }
+  }
+  @Test(priority=2)
+   void testDelete()
+   {
+     given()
+    
+    .when()
+           .delete("http://localhost:3000/students/4")
+    .then()
+           .statusCode(200);
+ 
+   }
+}
+
+
+Approch 2
+Post request body using Org.json lib
+//Prerequsite is JSON    dependenciy add
+   void testPostUsingHashMap()
+     {
+       // Create JSONObject  object
+          
+        JSONObject data = new JSONObject();
+        data.put("name","scott");
+       data.put("lacation","scott");
+       data.put("name","scott");
+      
+              
+
+
+    given()
+             .contentType("application/json")
+             .body(data.toString())
+       when()
+             .post("http://localhost:3000/students")
+       then()
+             .statusCode(201)
+             //Verify the resposnse
+            .body("name",equalTo("Scott"))
+            .body("location",equalTo("France"))
+            .body("phone",equalTo("123456"))
+            .body("cources[0]",equalTo("C"))
+            .body("cources[1]",equalTo("C++"))
+            .header("Content-Type","application/json; charset=utf-8")	 
+            .log() .all();
+     
+ 
+     }
+  }
+  @Test(priority=2)
+   void testDelete()
+   {
+     given()
+    
+    .when()
+           .delete("http://localhost:3000/students/4")
+    .then()
+           .statusCode(200);
+ 
+   }
+}
+ 

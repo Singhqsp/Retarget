@@ -1,0 +1,16 @@
+ Working on new scripts test cases as per the request from client. 
+ Involve in meeting with the client for getting Automation 
+Requirement 
+ Involve in analysis and maintenance of automation Script. 
+ Responsible for execution of automation run on weekly basis and 
+as per the new build and sharing the status with lead 
+ Involve in meeting with the different team for automation case 
+understanding. 
+ Identifying reusable functions, developing automation test 
+scenarios, test scripts, executing the scripts reporting defects. 
+ Providing support to production team with automation testing 
+result on requirement basis.
+
+ Understanding of business flow based on software specifications 
+and team discussions 
+ Understanding the customer requirements. 

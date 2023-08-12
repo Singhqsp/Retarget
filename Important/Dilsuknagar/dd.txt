@@ -1,0 +1,147 @@
+ RestAssured Framework Devlopment:
+----------------------------------------
+Framework:
+Here we will maintain different url,different pojo class
+reusable component,Maintianablity,test Cases,Readebility...
+
+Maintain all project related files
+Objective of framework:
+----------------------------
+1)Re-usability
+2)Maintainiblity
+3)Readability
+
+SO we will go for Hybrid fw
+                              -----------
+Different phases of FW:
+1)Userstanding requirement
+     ->Funtinal spicification(static document)
+      ->Swagger
+  The above two will be present before staring the FW:
+
+2)Choose automation  tool(It is library)->Rest Assured lib we will use
+
+3)Design the FW(folder structure,design)
+
+4)Devlopment
+
+5)Excution +CI
+
+ swagger document is neded to start automation FW
+
+
+Initially I will go for user module latter i will go for
+store and pet module..
+
+Here we need to have manual test cases then we
+go for automation
+
+So here I will Go for user in petstire URL and we will take
+GET,PUT,DELETE,POST for {username}
+
+Here we will prepare the API test cases and this test cases we write
+according to the swagger document
+Note:First all the test cases must be executed with postMan tool then Go
+for Rest Assured..
+
+
+Design of FW:
+   
+In my framework was devided into three parts
+
+Devlopment
+
+Exection
+
+Ci/CD
+
+
+In devlopment part I was having
+End Point->Routes,UserEndPoint
+Test Cases->UserTests
+Payloads->POJO
+Utilities->DataProvider,XL Utility ExtentReport
+Test Data->UserData.xlsx,StoreData,xlsx,PetData.xlsx
+
+Execution:
+TestNG.xml
+pom.xml
+Reports
+
+CI/CD:
+Git
+GitHUb
+Jenkins
+
+
+
+Lets Create the Project Structure:
+
+
+
+
+
+EndPoint:
+In endpoint we are keepping class with seperate URL 
+We will create one class as Routes in which I will Keep URL
+Rest other classes is for EndPoints
+Every Model URL differnt class
+Write the implementaion
+In this  just use  'then' validation
+
+
+Exexution:
+Payload is for data...POJO approch
+Utilities:
+DataProvider
+Extent Report
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+ 

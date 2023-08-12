@@ -1,0 +1,826 @@
+                         Important Notes
+Why we go for frameWork?
+We go gor framework because java exexutes line by line so our testcases will become constant
+whearas framwork is not excuting lne by line so,Test cases are not dependent 
+
+What is DataDriven Testing?
+DataDrivin testing :Fetching the data in external resource like propertyfile,
+xlsx.file,.xml,.json, and reading the data in a test script without hardcoding 
+is called datadrivin.
+
+ Why should i keep data in Property file?
+  We keep the comman data in property file like url,username,password
+    browser name.
+  ->Property file is more preferd because it is light weight
+  ->Property file stores the data in key value pair
+ ->Easy to read the data
+ ->Disadvantage->Not well organised in seqential manner.
+
+Where we keep the test Data?
+Test Data:
+   Data which is specific to only test case Like
+   Create Organisation->Organisation name
+   Create contact ->contact name
+  
+   To store the test data we prefer excel sheet
+   Excel sheet stores the data in the form of rew and column
+   Data is stored in well organised way so that data retrival becomes easy
+   Data maintanece is easy.
+  
+  Disadvantage of excel
+  Data is slow compared to property file.
+
+  Lets create the Test Data in excel sheet:
+  
+  For every module we are going to create seperate sheets
+
+
+
+Generic Utilities/Generic Library/Generic Utils
+  
+  ->This ia a package created in src/main/java source folder
+  ->It is used to store all generic classes
+  ->Method returned in generic  classes should not be hardcoded,they should be generic
+  ->What ever data we write in generic should be parameterised
+ ->When we call this method should return the scnario action
+  ->Based on generic method to return the type of generic method is decided.
+
+
+Advantage
+   Code will be optimized
+   No need to remember th syntax of web Actions..
+   No need to add the repetative codes again and again.
+   Lines Optimized 
+   Debugging is easy
+   Script Maintenece is easy
+ 
+..Generic lib is common for all Project,
+When MTE is  Writing document ATE will devlop the framework according to CRS
+GenericLib methods are getRandomNumber(),getDate(),handleDropDown() etc...
+
+So the generic methods which i have created are
+Java specific methods: JavaUtility--->C
+Property Specific methods :FileUtility--->C
+Excel Specific methods:ExcelUtility--->C
+Constants-->Iconstant-->I 
+
+Comments in Ecllipse
+//Comment
+/*
+      Comment comes i green
+*/
+
+/**
+*This class contains all methods
+* @author Abhi    [Discription comes in blue]
+*
+*/
+
+for class and methods it given discription 
+
+for every test script we write the author.
+Then write the detail about the class 
+
+Generic method for Random Class Create
+then
+Generic method for date Create
+/**
+*This method will  generate the system date
+*
+*
+*/
+public void getSystemDate()
+
+{
+  Date da = new Date()
+   String d = da.toString();
+   return d;
+}
+
+/**
+Create Simple Date Formatter method by your own
+
+* /
+
+public void getSystemDateInFormat()
+{
+  Date d = new Date();
+  String [] dArr = d.toString().split(" ");
+  String date =dArr[2];
+  String month =dArr[1];
+  String year =dArr[5];
+  String time =dArr[3].replace(":","-");
+  String currentDateAndTime=date+" "+month+" "+Year" "+time;
+}
+
+/**
+*Customised Exception wait
+*
+*
+*//
+
+public void customWait(WebElement ele)
+{
+   int count =0; 
+   while(count<10)
+    {
+        try{
+                 element.click();
+                 break;
+
+            }
+        catch(Exception e){
+   
+            Thread.sleep(1000)
+             count++;                  
+                                       }
+
+    }
+
+}  
+
+}
+
+/**
+Switching the window by collections
+
+*//
+
+public void switchToWindow(Webdriver driver, Tring partialTitle)
+{
+   //Step1: get all window handles
+    Set<String> windowIds=driver.getWindowHandles();
+   
+ //Step2:Iterate to all windows
+          Iterator<String > it =windowIds.ierator();
+}
+while(it.hashNext())
+{
+   String winId=it.next();
+   //switch to the window and capture the title
+    String currentTitle=driver.switch().window(winID).getTitle();
+    if(currentTitle.contains(partialTitle))
+        {
+           break;    
+        
+       }
+   }   
+
+}
+
+
+
+
+
+POM
+StaleElemetException:-> Stale  means  old
+Our page is refresh then then driver is not refresh
+
+@FindBy ->It is used to identify the element
+
+How to avoid stale element exception?
+We are not using driver refrence to fetch the adress istead of that we are using annotaions...
+
+Object Repositary/Element Repostary
+It is a collection of WebElement. and their locators
+It is devloped by using POM design pattern..
+Automation rule says data should be not hardcodded hence all the locators
+ are  stored in spcific resource
+
+Every script should have a author
+
+We should never depend  another script
+
+If anywhere is there precondition then first we will only create the procondition
+
+the we will delete the existing pre Condition. 
+
+If I want latest depency of any verion then I can go with::
+<version>latest</version>
+
+How to handle broken links in selenium?
+
+How to handle svg tags?
+
+
+What us POM?
+It is a design pattern prefferd in google to devlop the object repositary.
+It is also called as Object repositary /Element repositary.
+Its a collection of webelement and there locators
+Automation rule says data should not be hard coded so all the locators are 
+stored in spscific resources like excel sheet,Properties file or POM class..
+So Object repositary are devloped by using POM class...
+
+If locators are not hard coded ,then no need to identify the same element 
+multiple times
+  ->Many of the times there is frequent changes in UI ,modification of locater
+      becomes easy....
+Test script will be more optimised and it will work faster...
+->Readble easily
+
+WHY POM?
+It is well structured design pattern,where we maintain all the webelement
+page wise hance modification/maintanece of element becomes easy..
+
+Rules to declare POM class::
+Create seperate java class  for web page
+Class name should be same as webpage name,,
+Do not use driver element to identify the element,Identification is dene by
+@FindBy,@FindBys,@FindAll
+Create the constructor to initialize all the webelement..
+  Inside the constructor we will use PageFactory.inItElements();
+Provide the getter and setter methods to acess the elements..
+WE can provide reusable bussiness lib.... 
+
+
+
+Difference between POM and PageFactory design pattern?
+->POM is a java design pattern,where we will maintain all the web Element
+    locators in a organised manner.
+ ->Pagefactory is a extended design pattern of POM which has a methods 
+     called inItElement which is used to initialize  the  webElement with respect
+     to driver when the object is created. 
+What is staleElementRefrence Exception?
+->Basically Its a selenium exception,When ever we try to identify an elent
+    the element will be available gor GUI,but at the time of execution,the 
+    element will not be recorgnised due to page got refreshed or refrence may 
+    be old,or element is no longer available in DOM,In all these cases we get
+    stale Element Exception...
+
+  How POM will handle  StaleElementException?
+  POM design patern will not identify the elements with webdriver refrence ,instead it uses 
+  @FindBy,@FindBys or @FindAll to identify tht elements
+  All identified element will get initialises wirh driver refrence only by creating the object,
+  hence updated driver refrence is used to initialize.
+
+ Difference between @FindBy ,@FindBys ,@FindBys
+  ->All are selenium anotations
+  ->@FindBy(locator="value")
+          It is used to identify one element at a time,one locator one element
+  
+  ->@FindAll({@FindBy(locator="value"),@FindBy(locator="value")})
+          It is used as OR operator(either this or that)
+         
+         @FindAll is used for Auto healing process
+          Autohealing process is sa process where if the element is not identified
+          with one locator during execution it will try to identify for another locator..
+    
+
+    ->@FindBys({@FindBy(locator="value"), @FindBy(locator="value")})
+       Similar to and operator
+
+Advantage of POM class?
+->Helps to maintai the Object repositary in the well organised manner
+->Perfect fit foe agile process to handle frequent UI changes..
+->All the elements are stored page wise hence maintainece and modification is easy.
+ ->Pom uses Encapsulation
+ ->No external resouces like library
+
+Note:
+classNamePage ended with Page->It is  POM class 
+classNameTest ended with Test->It is Test Script
+
+@Test anotation
+ It derives the test script excution hence framework is called TDD framework.
+
+Test class name and Test method name should end with Test...
+
+TestClass name is module 
+Test Method name is usually testCases.
+
+BaseClass:
+Single Base Class acts like a parent and all the test script acts as a individual childs
+Hence the class follows Heirarchical Inheritence
+
+Explain Inheritence with respect to your framework?
+
+=>We used inheritence in base class which acts like heirchical inher... where Base class
+   contains all the confiuration with anootation acts like Parent clss and all the TS
+   should extend from Base class tpo utilize the funtinality given in Base class..
+
+Advantage of BaseClass::
+Code usibility
+Test Script is optimised
+Test Script devlopment is faster
+Code maintanece and modifucation is easy
+Debuging is easy. 
+
+Batch Excution::Excuting all the test script one after another,sequentially is call Batch Excution
+It is alse called Full Regresion testing..
+ It is preferd for full regression testing i.e when we can not identify 
+  the impacted area
+  80% application is affecting
+All the TS are loaded inside the suite xml file..
+
+Default excution order for every class is Alphebetical
+
+
+How to perform Cross browser Excution /compatiility testing?
+Choose the test script which have to executed in multiple browser
+create a seperate suite xml file and choose parallel mode as test and thread count is required.
+
+Listners:
+ITestListner
+I present in testNG
+I will monitor the test script
+I will monitor the various events in test script excution
+and perform the relevent information...
+
+onStart----start the excution(suite)
+onFinish->Finish the excution
+onTestStart-->Test script excution start(@Test)
+
+Who is going to tell that my test case pass,fail or skipped?
+
+ItestResult->It will capture the run time status of test scrtpt methods.. 
+
+     
+Note:
+result.getThrowable().toString();
+This method providres the msg of Exception..
+
+
+Reports:
+TestNg supprt high level HTML report
+ The report which is genrated by TestNG do not have barcode
+   No grafical reprsentaion
+   No pii chart is there
+   In this we can not append the SceenShot 
+So to overcome we will go for third party tool
+like
+->Extent report
+>Allure report  
+For the above reports we need to configure it...
+ 
+Report are the proof for excution which is given to customer
+as well as devloper
+And also report will help in debugging
+
+Extent Report
+For this we need third party tool 
+AvenStact extent report
+Here we will mainy moniter in BaseClass and Listner Implementation class.
+
+ExtentSparkReporter:(C)
+This class will help to configure the location of report..
+Basic setting also can be done like document title,report name,document colour..
+
+Extent Reports:(C)
+It is used for Basic system info..
+
+ExtentTest->(C)
+It will monitor perticular test Script
+
+It will log the status to test Script..
+
+Go to maven and search for  extentreports
+
+click on avnstack->Add the dependency to pom.xml...
+
+Go to Listner class
+Go to onStart method
+onStart() ->means starts of suite excution
+
+Write inside method
+Create the object
+ExtendSparkReporter in method then pass the folder path
+by creating new project
+
+How to pass the path?
+".\\ExtentReports\\Report-"+DataMethod call+".html"
+
+So my report will be saved inside ExtentReports
+
+now using refrence variable ExtentSparkReporter we can modify the reports
+ExtentSpartReporter htmlReport = new ExtentSpartReporter(".\\ExtentReports\\Report-"+ dateMethodcall"+".html");
+
+htmlReport.config().setDocumentTitle("V-Tiger Excution Report");
+htmlReport.config().setTheme(Theme.DARK);
+htmlReport.config().setReportName("Excution Final Report");
+
+Now Create ExtentReport object and set the attachment and  SystemInfo::
+
+ExtentReports re = new ExtentReports();//Declare it Global
+By using refrence variable of ExtentReports we will call the non Satatic methods like
+re.attactReporter(refrence _variable_of EctentSparkReporter);
+//Provide the static info.about the system in Key value pair..
+re.attachReporter("Base-Browser","Chrome");
+re.attachReporter("Base-Platform","Windows");
+re.attachReporter("Base-Host","8888");
+re.attachReporter("Reporter-Name","ABhi");
+
+
+
+Now go to onFinish()::
+Just flush the data(make re global)
+re.flush();It will consolidate all the test Script excution and dubp the status in report
+
+
+Now go to onTestStart()
+Works with @Test Anotation  
+Create one global variable where ExtentTest is a class and give variable name test
+
+ExtentTest test; 
+{
+  String methodName=result.getMethod().getMethodName();
+  test=report.createTest(methodName);//test is created which will initialize the indivudual test 
+}
+
+Go to on test sucess and log the statis of test case
+onTestSuccess()
+{
+  String methodName=result.getMethod().getMethod().getMethodName();
+   test.log(Status.pass,methodName" ----->passeed")
+}
+Now go to fail
+onTestFailure()
+{
+   test.log(Status.Fail,result.getThrowable());
+   or
+   test.log(Status.log,methodName+"----->Fail");
+}
+
+
+=>Same do in onTestSkipped()
+
+
+
+ 
+Note :
+It shold be configured onStart() only because every time my suite started it shold execute
+
+How to attach sceenShot in Report::
+
+Make sceenshot method as return type mrthod by proideing getAbsolutepath()
+
+Then that method we need to call in listner and store the path
+
+String path=call the sceenshot method from Webdrivermanager in try block
+
+test.addScreenCapturePath(path);
+
+
+ITestResult:
+It is an interface avilable in TestNG and it is used as an argument for every abstrct methods
+in listner implementation class which will capture the pass/fail status of current test script
+during run time..
+Reports :
+It is very impotatnt part of framework because they act like proof for all the excution
+done by automation tester.
+
+Customer usually ask for excution report and also fro devlopers
+
+Usually after every excution reports will be sent to  Product owner,leads,Tecnical
+Consultant and customers...
+-->There are two types of reports::
+ -High Level Reports:  
+    TestNG supports HTML report which provides basic information  likeTotal number of
+     test Script excuted ,Number of test script passed /failed/Skipped
+   Low Level Reports:This specify the log level analysis in testNG we have Reporter.log();
+     -  
+Different log levels:
+-INFO-which will give information
+-WARNING-warning
+-ERROR-issue
+-FATAL-issue
+
+->Disadvantage of html report in testNG:
+ ->No pie chart representaion
+ ->Non customisable
+ ->Cannot attach scrrenshot
+ ->very Simple reprting format
+
+So to overcome these drawback we use EXTENT REPORTS or ALLURE REPORTS
+
+=>EXTENT Report:
+  It is  a popular reporting format used i several companies as it given graphical
+  representation  of high level report
+  It has 3 major classes
+  ->ExtentSparkReporter->used to set the basic configuration for report
+  ->ExtentReports->Its a main class which will set system information to the report
+  ->ExtetetTest->This class will perform test script analysis
+ 
+ ->Extent reports can be configured in BaseClass or ListnerImplementation class of 
+    genericUtility package in framework,most prefered is ListnerImplementation class
+    because it monitors the excution...
+    flush should be mendatory to be used it will consolidate all test excution status  
+    and generate the report.  
+
+
+IRtryAnalyser in TestNG:
+->It is a interfasce present in TestNG, which will rerun the failed test script
+->Sometimes failure can be due to sunachronisation issue , nerwork issue,server issues
+     or any missalneious issue,and if we run the test script 3-4 times the
+script will execute and might pass..
+
+->For such type of issues we will analyse is manually,if passed only then for next execution
+will implwmwnt retryAnalyser...
+
+Question-
+1-Should we provide listneres to every class?
+  Yes
+
+2-Should we provide retryAnalyser fro every class ?
+
+NO
+
+
+Ques-Why We go for listners?
+Because it is used to monitor every trstScript and 
+based on the events  we can perform necessary action based
+on abstract class
+ITestListerner 
+
+->We can capture run time events
+->We can configure extent reports
+->It provides inbult methods to log tht status of test script..
+
+Why we have take ScreenShots?
+Sceenshot acts as proof yo the devloper for rising defect/bug
+Debugging becomes easy with scrrenshots
+It can be shared across with devlopers and other tester for easy
+communication of the issue..
+
+Ques-Out of 1000 TC there were 200 TC failed so how you will
+  only run the failed testCases...
+
+In Project-> Test Output folder ->testng-.failed.xml
+This suite xml will consist of failed test script in the current excution
+and it is autoupdated,it we run the suite it will excute.
+
+Ques->Out of 1000 test script ,200 test script got failded ,What is your approch?
+->Check the excution steps 
+->Rerun the failed test script to analyse the issue like 
+->Put break point and run  the individuales test script in debug mode..
+->if it is a test script issue -correcr and update the framework
+->If it is a product issue ->rise it as a bug
+
+
+Maven:
+It is build integration tool,build testing tool,Build Dependency tool
+
+Maven is tool which is used  for build managment  instead oh ANT and D=GRADEL
+
+Why Maven Devlopemnt?
+->In case of devlopment Maven is build process tool (Build Creation,Build Testing and Build Deployment)..
+
+Various Build commands used for these Build related actionss..
+
+Process of cinverting source code into any executable format?
+->mvn Package si used
+ 
+Since multiple ATE will be working in a project,so we have to test the project for compilation issue and also we
+check the build is broken or not?
+->mvn compile
+
+Build Deployment process:
+Initiating the build in teting server or any other environment ->We use mvn Deply,mvn install
+
+Why Maven is used in Automation testing?
+It is used for testing the application with currrent recent framework by executing the script...
+When multiple automation tester are working with current framefork then there  might be canges maid by automatin test engg..
+might affect entire framework to ovecome this we go for mavaen build life cycle...
+
+Commands of mvn life Cycle
+->mvn clean
+->mvn validate  ->It will check all the jars are downloaded for the dependencies or not if not it will download..
+->mvn compilation->It will check the compilation issues
+->mvn test
+
+->mvn test also does all the jobs but we can check individually the perticular test Cases
+
+Now if I want to run perticular class in mvn command prom?
+
+Yes we can run specific class mvn -Dtest=className test
+  -D statands for data and we need to provide key and value 
+    -Dkey=Value ->-D should end with test...Couple of times it will miss if it is not ended with test
+It will navigate to project location compare all the test cases name with name given in command if its matching it will execute
+If we want to run multiple specific classes:::
+-Dtest=className,className1 test
+
+Can We execute more then one class?
+Yes we can execute by comma seperated
+  -Dtest=className,className1 test
+
+Can we Run the spscific method inside perticular class?
+ mvn -Dtest=OrganisationTest#createOrgTest test
+
+
+
+Software in Maven :
+Maven ecllipse plug in
+Maven command line plugin
+
+When We create the new mvn Project then:
+Group ID->Company/Organisation name
+Artifact ID->Project Name
+
+What is pom.xml->Project Object model or Project configuration file
+
+
+Note:
+@Test when we write in test Cases then we save every test cases with _ _  _ _ Test.java
+So that no test cases are skipped when we write mvn test
+
+
+
+Ques:
+Why we have to read the data from command Line?
+=>Simetimes we can get the situation that tht customer have to excute the test script with differnt browser or
+     in differt enviromnet or with different credentials,sice customer can not go and make chnages in framework then
+     we provide the option in the framework to accept the run time parameter  so that we can pass the data using maven Parameter.
+
+=>In a same class if we want to execute the perticular test methods?
+  
+
+
+Practise th cmd prom commands Randomly?
+
+=>SureFirePlugin
+  If we want ro run any suite file with command prom then we will go for sureFire plugin 
+
+When we will add surefire plugin in pom.xml then when we will run mvn from cmd from the first surefire will execute...
+
+Advantage of it will be that if any testcsript will  not have test is last then also it will excute.. 
+->hence to load testng.xml file we make use of plugin is called Surefire plugin..
+
+Note::
+In a testNg.xml file every time it is not the good approch to update the <suitexmlfiles> </suitexmlfiles> in surefire
+plugins because it may coruptthe project so to overcome this drawback we need to go with Maven Profiling.
+
+Maven Profling
+<profile>
+<id>ReginalSmoke</id>
+//And paste the sure fier plugin with the updated maping in <suitexmlfiles>
+</profile> 
+
+
+Now to execute these profiles in command prom we will write mvn test -p id_Name_Provided
+
+
+
+
+Git:
+
+1-commit:-It will copy the framework from working directory to local repositary..
+
+2-push:It will copy the framework from local repositary to the global repositary or .git folder to github global
+             repositary with url and username and password/Token
+
+3-Clone:When we want to pull the project we need to clone th repositary by provideing proper username and
+               Token 
+               To clone the repositary it repositary should be present in the Github account.
+
+4-Pull-It will help us to get the changes pushed into the framework.We can use pull only if the project is existinging in the working
+            directory ie..It should be already imported only imported project can be pulled..
+
+Rules:
+a->Project should be commited local repo first then it should be comitted to global repo..
+b->To make any changes in project first we pull to local repositary from central repositary then it is imported
+       tp working directory.
+
+What is Git Conflict?
+When two ATE wants to make changes in the same repositary at the same location the Git COnflict arises..
+
+How to reslove the Git Conflict?
+Pull the codefirst before pushing
+Remove all the unwanted comments
+Analyse the code pushed by others
+If it is differt then push it
+
+
+
+
+Jenkins:CI/CD Tool
+ It is a continous integration tool ,continues Devlopment,Continues Deplyment and continues Delivery
+
+
+Example 
+Take facebook inilaty it has one feature i.e Friends msg...
+
+Two devlopers were there one will be for manage friends and manage friends
+
+Another person came as devops who made it as a build..
+
+Now this build instaled in tesing server,now MTE will write the test case And ATE will write the Test Cases..
+
+There is one more ENvrionment called as production..With production they are customer to acess..
+
+
+Now UPDATE CAME
+News Feer Pages update came
+Now for this new module is integrated with old features 
+Now whole appliction id given in build,Testing,Producion Enviroment.
+
+Now any new source code is is done by the jenkins  
+
+So when ever new update comes this jobs are created every time  so this is done by jenkins
+
+That is why it is called continues Devlopment continues Deployment Continues Integration..
+
+Automation Engg:
+We will check the continues integration between the old feature  and the new feature  with old framework...
+
+
+Why Jenkins is required in Automation?
+ATE use jenkins for Continues INtegration..
+
+Continues integration means checking the ingration issue between old build and 
+the new feature by executing the old frame work.
+
+If the test sxcript get failed then with the failure we will come to know
+what is the impact of new feature on the old build..
+
+Hence we analyse the failure ,debug the failled test script ,if any product
+issue is found then we will raise it to JIRA,IF any TS issue the we will correct it... 
+
+Jenkins Configuration..
+Login to jenkins
+DashBoard->Manage jenkins->Global Tool Configuration
+                   ->Set path for jdk,git,MAven
+
+=>Create Job in jenkins:
+     ->Login to jenkins
+      ->New Item->Name of job->Choose Maven Project
+     ->Provide the git location where maven is stored
+     ->Provide schule ->specify the pom.xml location inside the project 
+     ->Root POM->specify the pom.xml location inside the project
+     Goal->Default goal for tester in test
+            ->All maven commands can be given like:
+                ->test -P SmokeSuite
+                ->-Dbrowser=Chrome -Dusername=Chaitra test
+         Provide any post buiild action if needed        
+
+=>Parameters in Jenkins:
+    ->Jenkins also supports parameters but internally its maven parameter only
+    ->We use $ specify jenkins parameter
+    ->Choice parameters provide multiple choices for data that can be chosen during the execution..
+    ->Using jenkins parameter in goal..
+        -Dbrowser=$browser  -Dusername=Chaitra -Durl=$url test
+      Here browser and action are used during build now action..
+    
+     Why jenkins parameter is required?
+     Sometimes customer might want to execute the job with different browser or in different Environment
+      ,Since customer will not make changes in framework,so we provide choice in parameters,so that it gives dropdown of
+       different choices given like different browser name,different environment,customer can easily choose the drop down and execute 
+       the job ..No coding Knowledge needed to run the job..
+
+   =>Schedule job in jenkins:
+        Scheduling decides when the job execution should be triggred or started
+        There are three types of scheduling in jenkins 
+         ->On Demend
+             When ever the customer demands the executiom, we will trigger the execution
+             with build now option available
+          ->There is no exsimated time for execution,whwnever customer demands,we can run..
+         ->Build nowis a action performed for ON demand scheduling
+
+         ->On Schedule scheduling:
+             Specify the exact time duration of when the execution should start is called on schedule scheduling
+           ->While configurring the job only we have to provide  "build periodically" in build trigger..
+             ->Jenkins Follow the specific Scheduling
+              
+
+             MINUTE  HOUR  DOM MONTH  DOW
+              (0-59)      (0-23)  (1-31)   (1-12)    (0-7)
+         
+
+
+           ->ON Schedule does not bother if the framework is updated or not,it will start the execution immediately in the spscified
+               time scheduling..
+
+  =>Poll SCM
+      ->It will detect the changesmade in specified git location(SCM-Source CODE Management)..
+          It will start the execution in scheduled time..
+
+        ->Here schedule is usually
+        H * * * *->When ever any changes is detected like new oush/commit it will trigger the job
+         ->When we make any chages is detected in push/commit it will trigger the job..or
+             if its pushed into the branches then it has to be reviewed and merged into the master..
+         ->Usually Master repo of thre framework will be configured with jenkins and if any new commit
+             is recorginised,jenkins will start the execution based on scheduling..
+
+       
+How to Work with Broken links?
+
+->A server generates HTTP status codes in response
+to the request submitted  by client to server..
+->A valid Url willl have a 2xx HTTP ststus code
+->Broken links which are essentially invalid HTTP request will have 
+ststus code as 4xx and 5xx status codes..
+
+
+->Now we need to collect all the links on the webPage
+->Send Http request for each link
+->Varify the http response code
+->Determine the link is broken based on HTTP 
+    response code.
+->Repete steps for all links
+
+
+
+
+
+
+
+
+

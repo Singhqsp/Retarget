@@ -1,0 +1,1952 @@
+
+
+ ->API
+   ->Manual API->We will do by using postman
+  ->Automation->We will do by using RestAssured
+                             ->FrameWork of RestAssured
+
+->
+   Automation project by using Hybrid FW
+                    ->This we will do vtiger Project
+ 
+ ->GitHUB
+ ->Jenkins
+
+Cucumber or BDD fw
+
+
+API:
+Checking the Feature funtinality of application without UI is called APi 
+
+Checking the Feature funtinality of application without presentation layer is called APi 
+
+If presentation layer is not there then API is acting like a presentation layer for API testing.
+
+Types of API
+Communication level API
+Coding level API
+
+Communication level API:
+The kind of API which exist in the form of webservices
+
+Coding Level API:
+The kind of API which exist in the form of jars  
+
+Every jar which we use is one API,which is stored in our GitHub
+
+
+WebServices:
+Whenever two application want to communicate with each other we requre WebServices.
+
+When App. want co commuicate with server we require webServices
+
+
+
+Ques-When http can communicate with server why we require Webservices?
+->Because http dependencies consumes huge memeory compare to webservices  
+
+TrickQues:
+What is difference between API and webSedrvices?
+
+API:  It is used to acess the feature present in server or application
+Webservices: It is used to store and transfer the data from one app to another app.
+
+Both API and WebServices are paralley depenedent to each other
+
+URL:
+It statnds for Unified resouce locator
+  It is a unique indent used to locate reouces in a server
+     
+    https://www.flipkart.com/
+
+URI:
+It statnds for inified reouce identifier
+It consist of logical and seqential charcter though which we can reach to end point of the Web Apllication
+ 
+ https://www.flipkart.com/mobile-phones-store?fm=neo%2Fmerchandising&iid=M_a420a30c
+ 
+ URI is written after question mark which is the end point of the WebApplication.
+
+
+https://www.google.com
+
+https://www.google.com/?gps
+
+Note:
+Every API exist in the form of URI but every URI is not the API 
+
+
+Advantage of APIs:
+Reusibility of API is possible
+API are platform independent
+API helps to communicate between two application
+Version updation affet to every aplication
+
+Resouce:
+Static WebPage Resource
+Dynamic WebPage Resource
+
+Static WebPage Resource:
+When user send the request to the server then in response we will get the same data
+again and again.
+
+Dynamic WebPage Resouce:
+When we send the request to server the response well change every time  is called
+Dynamic web Resource..
+
+
+API can be devloped in two format:
+SOAP API
+REST API
+
+SOAP API:
+It stands for simple object acess protocol.
+If api consumes a weservices  devloped in xml language then it is called SOAP API
+
+REST API
+IF API consumes the webservices devliped in JSON language then it is called
+REST API
+It statnds for Representation state transfer..
+
+
+Advantage of JSON over XML:
+1- In XML we can store and transfer the data in String format whereas JSON we
+    can store and transfer Object,Array,int,etc
+2-XML provides in String dataType whereas JSON provides multiple datatype like
+   Array,Object ,String etc
+3->XML is complex to understand whereas JSON is easy
+
+4-JSON is faster then XML
+
+What is JSON?
+It stands for Java Script ObjectNotation.
+It is the advanced version of JavaScript
+ "Student" :{
+                     "name":"Raja",
+                     "rollNum":22,
+                     "age": 18,
+                      "Sub":"Java",
+                       "gender":"Male"    
+                   }
+            
+JSON stores the data in the form of key:value pair
+Every key:value pair is seperated by   ','
+Every key:value pair is one entry
+{ }---->It is considered as an Object
+Last entry we never provide the ', '
+Key must be always in String format
+
+
+How to use Array here?
+
+  "Student":{
+                       "phone":[12345,322332,32323 ]
+ 
+                 }
+
+[ ] -->It is considerd as an array
+
+        
+->Object inside Object is possible  
+
+   "Employee":{
+                          "name":"Abhi",
+                          "EmpID":223,
+                          "sal":1000,
+                          "designation":"SAE",
+                            "skills":{
+		           "manual":"---*",
+                                          "SQL":"-*",
+                                          "Automation":"--------*",
+                                          "JAva":"--*"
+
+                                       }   
+
+                       }
+                     
+
+[
+    "Stud1":{
+                    "name":"A"
+                },
+   "Stud2":{
+                    "name":"B"
+                },
+   "Stud3":{
+                    "name":"C"
+                }
+
+
+]
+
+
+
+Conclusion:
+
+Object inside Object---->Valid
+Object inside Array--->Valid
+Array inside Object---->Valid
+Object inside Array---->Valid
+
+Request And Response:
+
+Request:
+When client send any work to perform in server is called request..
+
+There are four imporatnt parameters requires in request.
+1-URI
+2-HTTP methods
+3-Content Type
+4-Payload Data
+
+1-URI:
+https://www.google.com/searcg?q=ipl
+
+https->protocol
+
+www.google.com->Domain Name or server name
+
+search->Resuoce Path
+
+?=ipl
+    After question mark what ever we write is  querry String  
+
+What  is Protocol?
+When ever two application want to communicate with each they requre 
+some rules and regulation to communicate with each other.
+
+Or 
+
+It is a agrement though which two application can comunicate with other
+
+
+There are two most frequently used  protocol
+https
+http
+
+
+Server:
+ It will take the request from the client and it will reach to the webaplication
+and it will perform the opertion and return back to the client
+
+Resource Path:
+It is a perticular path to acess the required webresource present in server
+
+It starts after  '/' and before '?'
+
+Resouce path we can also say as module or feature name
+
+Querry String:
+It is a sequece of charecter which provide required information
+
+
+HTTP methods:
+It is a compulsory paramter  in request header.
+->HTTP methods decide what type of work request need to perform in
+    server.
+There are following HTTP methods which we use
+1->GET
+2->POST
+3->PUT
+4->Patch
+5->Delete
+
+1->This method is used to fetch the data from server
+       example Indigo flight search
+2->POST-The method is used to add or insert data inm server.
+     Example:Booking the flight with required information
+3->Delete- This method will delete the data from server
+4->PUT->PUT means update the data fully in the server
+
+5->PATCH->It means update the data partially inside the server
+
+
+
+
+ContentType:
+It is not compulsary parameter for request
+Beacuse get and delete method do not requre content to send whereas 
+post,put,patch requres content
+
+In content tyep we send some data that needs to be written in server
+
+PayLoad:
+What type of actual data in KB,MB or GB we send the data to server 
+
+Response:
+
+Status Code:
+It is the indication of server weather server perform the request in proper
+way or not acording to the request
+
+100
+200
+300
+400
+500
+
+100-:[101,102,103,......110]
+This status code we get when request is not reach to the server..
+Example:
+             10 or 12 result
+
+200:[201,202,203....210]
+The task alloted to server is sucessfully done then we get 200 series ststus code
+
+
+300:[301,302,303....]
+We get 300 ststuc code when there is involment of two or more server and the first server
+is responding while the other is not reponding.
+
+400:[401,402,403]
+When there is any spelling mistake or internet issue then we get 400 series
+ststus codes...
+
+500:[501,502,503....]
+We get 500 ststus code series when request is reching to the server but
+server is not reponding...
+
+Note:
+100 and 300 we will get rearly mainly we will deal with 200,400 and 500
+ststus code
+
+
+
+Now lets Strat Acutal API testing:
+Why we neeed nodeJS?
+It will provide the free API for testing
+
+How to install nodeJS:
+In google type nodejs download
+Click on the first link
+Click on windows installer .msi file
+Go to the download and keep the downloded nodeJS in seperate folder.
+Perform normal installation steps....
+
+How to check wether nodeJS is installed or not?
+Go to cmd prom
+
+node --version
+
+After installation of NodeJS we have to go npm Lib:
+
+npm lib automatically install with nodejs
+
+To get the free API we require json server also:
+Json server is same as real time server so we will also json server
+
+Now we will download JSON server using npm::
+Go to the cmd prom where we pasted the NodeJS and type the command
+  npm insall -g json-server     ->It will install json server in my system
+
+Now to install JSON-server we type the following command in cmd prom
+
+         json-server --watch db.json
+
+
+
+Can we acess API through browser?
+Yes we can but it is not recomended because we can not perform any execution
+or validation here.
+
+
+Why Postman is needed to test the API?
+
+1->Beacuse it will provide the http methods
+2->Here we can perform the validation of response
+3-here we perfrom multiple excution
+4->Cache memory never creates a issue
+
+How to install postman in system?
+
+Go to google type postman download
+then click on first link
+Click on 64 bit of postman
+
+
+How to use PostMAn:
+Step1:
+Create a workSpace by providing the proper name
+Stpe2:
+Create a Collection(Here project is called as Collection)
+ Create a collection by clicking on Create new Collection by providing the name
+Step3:
+Create a folder(Which is similar to package in ecllipse)
+ 
+To create folder  we will click on three dots of collction and click on new foder
+
+Step4:
+Create a request which we need to perform in our server
+ to create request we need to click on three dots of folder and click on ADD request
+
+
+http methods utilization:
+Get:
+To use Get methods we require only url ,which we will copy and paste
+
+Post:
+->To use Post method we require url as well as content which we need to write in BODY.
+->Click on body then click on Raw ->Then click on JSON
+
+Put:
+->To use put method we require url as well as content which we need to write in BODY.
+->Click on body then click on Raw ->Then click on JSON
+->We require end point to update the data     
+
+Delete:
+To use Delete methods we require only url ,which we will copy and paste
+And also we requre end points
+
+
+Validation of Response:
+
+There are multiple validation present in API:
+We need to valiadte the 
+
+Status code
+Headers
+Cookies
+ResponseTime
+ResponseBody
+
+
+So to perform validation  or assertioni n postman we require
+  pm-library and also require JavaScript methods
+
+
+The Lib here called as Chai Assertion lib if we want to perform validation
+                                     -------------------
+
+Here there two waus to the javaScript funtions
+1-Normal Funtion
+2-Arrow Funtion
+
+1-Normal Funtion
+         
+            pm.test("TestName",funtion()
+                         {
+                              assertion
+                         }
+            );
+
+2-Arrow Funtion
+        
+              pm.test("TestName",() =>
+                                         {
+            		         assertion
+                                         }
+                     
+);
+         
+Validation of Status Code:
+
+pm.test("Validate StatusCode",function()
+      {
+        pm.response.to.have.status(200)
+      }
+
+);
+
+Validation og Response Time:
+pm.test("Response time is less than 200ms", function () {
+    pm.expect(pm.response.responseTime).to.be.below(200);
+});
+
+This all methods will be present in snippets of PostMan
+
+Now We will validate the headers:
+Note:
+We can validate the ststic content only like date,time can not be validated 
+because they are dynamic content 
+
+Check that perticular key is present in header or not?
+
+pm.test("Content type header is present",()=>
+   {
+     pm.response.to.have.header("Content-Type")
+   }
+);
+
+pm.test("Pragma and ContentLength is present",()=>{
+    pm.response.to.have.header("Pragma")
+    pm.response.to.have.header("Content-Length")
+});
+
+
+Validation of Given Value in Headers:
+
+pm.except("ContentType Header Validation")
+
+
+
+pm.test("Content-Type header Validation",()=>{
+
+   pm.expect(pm.response.headers.get("Content-Type"))
+
+   .to.eql("application/json; charset=utf-8")
+   
+});
+
+pm.test("Pragma Validation in Headers",()=>{
+
+   pm.expect(pm.response.headers.get("Pragma")).to.eql
+   ("no-cache")
+
+
+
+});
+
+
+Now we will Validate the Response Body:
+------------------------------------------------
+So here we will create our own Json File in notepad 
+and We will give the extension as .json..
+
+{
+     "Stud1":{
+  		"id":1,
+ 		 "name":"Raja",
+ 		"phone":"21211",
+  		"courses
+
+":["Java","Selenium"]
+                 }
+}
+
+To validate the body we first store the response in one variable..
+
+const jsonData=pm.response.json();//Storing the response Body in one variable
+console.log("Hello");//It will print the data in our console
+
+console.log("Json Body Response"+jsonData);
+
+pm.test("Validation Of JsonBody is Object",() =>{
+ 
+  pm.expect(jsonData).to.be.an("Object");
+
+});
+pm.test("Validation of Id is number",()=>{
+   pm.expect(jsonData.id).to.be.a("number");
+
+});
+
+pm.test("Validation of name is String",()=>{
+   pm.expect(jsonData.name).to.be.a("String");
+
+});
+pm.test("Validation of Id is number",()=>{
+   pm.expect(jsonData.id).to.be.a("number");
+
+});
+pm.test("Validation of Courses is Array or not",()=>{
+   pm.expect(jsonData.courses).to.be.an("Array");
+
+});
+
+note:
+const is data dataType same Var is also a DataType to store data
+-----                                         ----
+Now we will Validate the JsonBody Key value  data::
+
+const jsonData=pm.response().json();
+
+pm.test("validation of Value in ResponseBody", () => {
+
+     pm.expect(jsonData.id).to.eql(1)
+     pm.expect(jsonData.name).to.eql("Raja")
+     pm.expect(jsonData.phone).to.eql("21211")
+     pm.expect(jsonData.courses[0]).to.eql("Java")
+     pm.expect(jsonData.courses[1]).to.eql("Selenium")
+
+
+
+    
+});
+
+Chaining process in PostMAn:
+Running all your request Simultaniously is called as chaining process
+In chaning process we can see all the test Output pass or fail
+
+How to perform it?
+Click on three dots of collection
+We will click on run Collection
+Here we can provide the itaration and delay
+and then click on Run
+
+pre-requesite
+First pre-reqisite script will execute then Request then Response and in last
+tests will ececute
+
+
+There are three level in this
+Collection level
+Folder level
+Request level
+
+Variables in PostMan:
+Global VAriable
+Environment Variables
+Collction variable
+Local variable
+
+Global Variable:
+If we declare any variable as global then we can acess it anywhere within 
+in a same workspace..
+
+Environment Variable:
+http://localhost:3000dev/posts
+int x=20;
+http://localhost:3000qa/posts
+int x=30
+http://localhost:3000pro/posts
+int x=0
+
+Acess through perticuler workspace but we need to switch perticalr 
+environment
+
+
+
+Practise
+
+https://reqres.in/
+
+Complex Json :
+If we get compex json then finding path is trick so we must use here JSON path finder tool
+
+How to find JSON path finder tool:
+Go to google and type JSON path Finder tool
+                                        -------------------------
+Copy the json Script and paste  in tool and go to the perticular key..
+
+Note:
+We should never copy x from path
+                                      ---
+
+
+Authentcation and  Authorizaruion:
+
+Authentication means providing proper credential to login to the application amd check wether user exist or not
+
+Autorization means after authentication provideing the access to the perticular user in Application is called
+Authorazation
+
+There are multiple Authoration in our postman:
+1-No auth
+2-API key
+3-Bearer Token
+7-Basic Auth
+4-Digest Auth
+5-OAuth 1.0
+6-OAuth 2.0
+
+
+->No Auth:
+There is no Auth for this API
+
+->API key
+In this devlipers will provide the key and value which we will
+provide in our API key
+->Basic Auth:For this we will get username and password to 
+    acess the API..
+    https://postman-echo.com/basic-auth
+     
+    usename:postman
+    password:password
+
+
+Digest Auth:
+Disest Auth is similar to basic  Auth only the difference is for
+Encryption 
+In Basic Auth data is not encrypted where as in Digest Auth
+Data is Encrypeted
+Here also we reqire UN and PWD
+
+OAuth 1.0:
+This typy of Authorization is used for high Security
+
+Here we need to provide the Consumer Key, Consumer secret,Acess token and Acess secret
+
+
+CRUL and Swagger:
+
+Swagger:
+
+It is a intractive document
+Intractive document means it is a non static document in which we update and also we can execute the APIs
+Swagger document is going to prepared by Devlopers
+Swagger we can say also as a tool in which Document is prepared
+
+
+D/f between swagger and postman:
+Swagger is used to exlorer the API but postman is used to test the API for testing
+Swagger we can not put any validation but in postman we can perform validation
+Swagger we can not save the result but in postman we can save the result...
+
+Note:
+After devloping the API devlopers will share the swagger Document
+
+
+CURL:Client URL
+When we will excute the API form swagger then we will get Curl in response
+
+What is CURL?
+It is a consolidated data in which we will have body,parameter,URI,url
+
+Copy the curl and paste in  postman
+In postman go to import and paste the Curl
+
+If we paste the curl no need to provide the url,uri,parameter,body 
+
+Genration Random Numbers:
+
+const randNum=Math.floor(Math.random()*1000+1);
+console.log(randNum)
+
+Generate Random String:
+var randStr="John"+Math.random().toString(36).substring(2);
+console.log(randStr);
+
+In Post We given body as
+
+{
+  "id":{{id}},
+  "username": "{{un}}",
+  "firstName": "{{fn}}",
+  "lastName": "{{ln}}",
+  "email": "{{email}}",
+  "password": "{{pwd}}",
+  "phone": "{{phNum}}",
+  "userStatus": {{us}}
+}
+
+const randNum=Math.floor(Math.random()*1000);
+console.log(randNum)
+
+var randStr="John"+Math.random().toString(36).substring(2);
+console.log(randStr);
+
+pm.environment.set("id",randNum);
+pm.environment.set("un",randStr);
+pm.environment.set("fn",randStr);
+pm.environment.set("ln",randStr);
+pm.environment.set("email",randStr+"@gmail.com");
+pm.environment.set("pwd","12121");
+pm.environment.set("phNum","123443");
+pm.environment.set("us",0);
+
+How to Run the request in Command prom::
+
+To run in command we reqirer the tool NewMan tool
+
+Reqrirement for newMan is NodeJs +npm must install:
+
+How to install newman:
+open cmd prom
+npm install -g newman
+
+How to Excute Collection in cmd Prom:
+My collection is not present in my System so to transfer Collection in my System following Steps reqired
+->Click on the three dots of collection
+->click on Export
+->Select the recomended version of Collection and Click on Export 
+->Now save the file in your System in .json extension...
+
+Now Steps to excute the .json File in our System,
+
+Open the cmd Prom Where we saved the File
+Write the cmd
+  newman run Filename.json
+
+How we can genrate the report of our Request:
+
+First we need to install reporter.html
+
+npm install -g newman-reporter-html
+
+Now open the cmd prom and type the code to genrate the report
+
+newman run Filename.json -r html     
+
+We will get the Folder where report will be present
+
+
+
+Rest Assured
+It is used to verify the API with the help of java Lib
+Java lib will act like headless in which we will send the request and
+we will get response
+With the help of Rest Assured we can handle the http methods,responses,
+Ststus Code,Status time, etc
+
+Pre requisute of Rest Assured:
+Maven
+Java 11 
+TestNG
+
+Dependencies reqired for Rest Assured:
+->rest assured
+->json-path
+->json
+->gson
+->testNG
+->JavaFaker
+->Jackson-DataBind
+
+
+Rest Assured have many http methods
+Get,Post,Delete,Put(mainly)
+
+Rest Assured follow Gherkins language of Cucmber
+
+given() 
+when() 
+then()
+
+given()->It is a precondition before sending the request 
+                content-type,add  auth,add param etc
+
+when()->Here we provide the http methods
+                 Get,Post,Put,Delete
+
+then()->
+         Validation status code,extract the response,extract response body
+           It can be used for multiple validation
+Note:
+If we will try import then it will not import beause it requires static Import
+To get static import we need to go Google and type Rest Assured Documentation 
+then Click on the first link
+Scroll down and click on getting started 
+Then copy the static import and paste in your class
+All the packeges which we copy paste must be ststic
+
+import static io.restassured.RestAssured.*;
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
+
+
+@Test(priority = 2)
+	public void getSingleUser()
+	{
+		given()
+		
+		
+		.when()
+		  .get("https://reqres.in/api/users/2")
+		
+		.then()
+		.statusCode(200)//Validate the status code
+		//It will print all the response in our console
+		.body("data.first_name",equalTo("Janet"))
+		.log().all();
+	}
+	
+	@Test(priority = 1)
+	public void createUser()
+	{
+		//To store data we will use HashMap beacause it stores the data in the form of Key and Value
+		HashMap hm = new HashMap();
+		hm.put("name","tom");
+		hm.put("Job","Triner");
+		given()
+		//What type of Data we are passing
+		.contentType("application/json")
+		.body(hm)
+		.when()
+		 .post("https://reqres.in/api/users")
+		 .then()
+		  .statusCode(201)
+		  .log().all();
+		  
+		
+		
+	}
+	
+	//@Test(priority = 3)
+	public void updateData()
+	{
+		HashMap hm = new HashMap();
+		hm.put("name","jerry");
+		hm.put("Job","Clever");
+		
+		given()
+		.contentType("application/json")
+		.body(hm)
+	   .when()
+	    .put("https://reqres.in/api/users/2")
+	    
+	   .then()
+	    .statusCode(200)
+	    .log().all();
+		
+	}
+	
+	//@Test(priority = 4)
+	public void deleteData()
+	{
+		given()
+		
+		.when()
+		 .delete("https://reqres.in/api/users/2")
+		 
+		.then()
+		  //.statusCode(200)
+		  
+		 .log().all();
+	}
+}
+
+How to perticular Id which is created at the Time of Execution:
+
+public class FetchId {
+	int idnum;
+	@Test(priority = 1)
+	public void createUser()
+	{
+		//To store data we will use HashMap beacause it stores the data in the form of Key and Value
+		HashMap hm = new HashMap();
+		hm.put("name","tom");
+		hm.put("Job","Triner");
+	  idnum=	given()
+		.contentType("application/json")
+		.body(hm)
+		.when()
+		 .post("https://reqres.in/api/users")
+		 //It will store the id of jsonBody
+		 .jsonPath().getInt("id");
+	  System.out.println(idnum);
+}	
+//After fetching the id we can use it as a End point of the request..
+
+How to fetch the data from External File and Create the data:
+
+
+
+
+How to pass the querry parameter and path parameter?
+
+->qureey paramter and path parameter is given pre-requisite
+->pathParamter we specify with single Curly braces in URI
+->Both querryParameter and pathparameter we can provide the data in Key:Value pair
+->If we provide the querry parameter and pathParameter then data 
+    we send automatically at the time of
+    Request(Data is not hard Coded)
+   https://reqres.in/api/users?page=2&id=5
+    
+  pathParam 
+   users 
+   
+   queeryParameter
+     Page=2
+     id=5
+
+
+How to validate the cookies and headers:
+
+In validation of cookies and headers somtimes they are dynamic so 
+if it is dynamic we need to fetch at the execution..
+
+If we Want to fetch Multiple values of cookies:
+@Test
+	public void multipleCookiesHandle()
+	{
+		Response res= given()
+		
+		.when()
+		.get("https://www.google.com/");
+		
+		  Map<String,String> mulcookies= res.getCookies();
+		 //if we want to print all the keys of your map then we use .keyset();
+		 System.out.println(mulcookies.keySet());
+		 for(String k:mulcookies.keySet())
+		 {
+			 System.out.println(res.getCookie(k));
+		 }
+		  
+		
+		
+		
+	}
+
+Validation of Headers:
+Validation of headers whicle providing direct headers value
+@Test
+	public void m1()
+	{
+		given()
+		  .when()
+		  .get("https://www.google.com/")
+		  
+		  .then()
+		  //Single Validation
+		  .header("Content-Type","text/html; charset=ISO-8859-1")
+		  .and()
+		  .header("Content-Encoding","gzip")
+		  
+		  .log().all();
+          }
+
+
+
+Validating Single headers by Response
+
+	@Test
+	public void m1()
+	{
+	   Response res=	
+			   given()
+		  .when()
+		  .get("https://www.google.com/");
+		  
+		  String hedValue=  res.getHeader("Content-Type");
+
+		  System.out.println(hedValue);
+		  Assert.assertEquals(hedValue,"text/html; charset=ISO-8859-1");
+		  
+		  Reporter.log("Content type validation Done");
+		  
+		  }
+
+
+Note:Cookies store the data in Map in the form of Key and value pair whereas Headers
+Store the data in Headers Datatype the  form Key and Value
+
+Print All the headers And Validate:
+
+@Test
+	public void m1()
+	{
+	   Response res=	
+	                   given()
+		  .when()
+                                .get("https://www.google.com/");
+	       //Headers is a datatype which stores all the headers of response
+	       Headers myhed=  res.getHeaders();
+	       
+	     //Here we used getName and getvalure to print the key and value of headers
+                      for(Header h:myhed)
+	      {
+	    	  System.out.println(h.getName() +" "+h.getValue());
+	      }
+		  
+
+		  
+	}
+
+
+Validation Of Body in response:
+
+First we will see how how to validate single body in "then" section
+
+@Test
+	public void singleDataValidate()
+	{
+		given()
+		
+		.when()
+		 .get("http://localhost:3000/store")
+		 
+		.then()
+		  .statusCode(200)
+		  .body("book[2].title",equalTo("Sayings of friction"))
+		  
+		  .and()
+		  
+		  .body("book[1].author",equalTo("Abhi1"));
+		 
+		 
+		 
+		 
+	}
+
+
+Validation of Body using varaiables:
+Sometimes we will have a typical scnerio in which we will first store the data 
+then we need to validate
+So to validate more effective way we will use varables
+varaibles store is more preferd bacause we can resuse in future and
+we can perform addtional validation
+@Test
+	public void m1()
+	{
+		Response res= given()
+		
+		.when()
+		
+		.get("http://localhost:3000/store");
+		//It will print the value of Body in response
+		System.out.println(res.jsonPath().get("book[0].category"));
+		
+		//We are going to store the value of response
+		String data= res.jsonPath().get("book[0].category").toString();
+		String name= res.jsonPath().get("book[2].author").toString();
+		Assert.assertEquals(data,"reference");
+		Assert.assertEquals(name,"Abhi2");
+		Assert.assertEquals(res.jsonPath().get("book[2].price").toString(),"1500.5");
+		
+		Assert.assertEquals(res.getHeader("Content-Type"),"application/json; charset=utf-8");
+		
+}
+
+How to fetch all the title from thar perticular Json Response?
+
+Sometimes we will get the scenario that we need to validate from all the values
+then we will fetch all the values by providing key
+
+How to fetch all the values:
+Store the response in Response refrence variable
+Then Check the response is JsonObject or JsonArrray and acording to it create
+the Object
+In Object pass asString() because we need to convert response into String
+
+Then again follow your jsonbody Response and use the forloop and Procede further
+
+
+Note:
+
+   then()
+  
+   if I do log.headers()->It will provide only headers
+   if I do log.body()->It will provide only body
+   if I do log.all()->It will provide full response
+   if I do log.cookies()->It will provide only cookies
+
+Serialization And Deserialization:
+
+Serialization -->Java(Pojo)----->json
+Seserialization-->Json  --->Java
+
+
+Serializtion:Coverting java into json is called Serialization
+
+To perform serialization we have to go for ObjectMapper class which
+we need to create the Object
+we also used the not static method that is
+writerWithDefaultPrettyPrinter().writeValueAsString(pj)
+
+Deserialization:
+Coverting json in java is called as deserilization.
+Yo perform deserilization we will go for ObjectMapper class in whic we will
+Create Object of it
+Then we will go for non ststic method readValue(From where to read,where to pass that Data)
+
+Authoraization:
+There are multiple Authrization present in Rest Assured
+
+Basic Auth:
+DigestAuth:
+PrimitiveBasic  Auth->Combination of both Basic and Digest is called 
+as Primitivebasic Auth
+It provides more secyrity then Digest Auth
+Here also we require Un and pwd
+
+All the above authorization were based on username and password
+
+Every API which is desigen it will have there own Authorization
+
+If the API are very complex and high Security is there then we go for
+Auth 1.0,2.0
+
+
+
+If the API is present in Github then Github genrates token  which token we
+will use our script and we can utilize it
+If we want to use it then we will go for Bearer Token authoration
+
+
+OAuth1:
+It is used in more complexity and for secured API
+In OAuth1 we will get consumer key,Consumer secret code,Acess Token,Token Secret
+
+OAuth2:
+
+Here only we require acess token
+
+Project:
+We go for framework beacuse java executes line by line so our
+test Cases will  be dependent so to change the execution flow we 
+for framework
+
+Rules to design FW
+Data sholud be never Hard Coded
+If any reusibility of data or block or methods are there then we keep in 
+one place and we will use it multiple times.
+
+What type of data we keep in property file?
+The dara which is common through out the project we keep in 
+property file..
+Data is kept in key value pair
+
+
+Why we keep the data in Propert file only?
+Property file is more preferef bacause it is lighter in weight...
+
+
+Disadvantag of property file?
+
+Data is not organised in sequential manner...
+
+Where we keep our test Data?
+Data which is specific to only test Cases is called test Data
+Like ->Organisation name
+Contact Name
+Test Data I have kept in excel Sheet...
+Excel sheet Stores the data in Row and Column(cell) wise
+Here Data is stored in well Organised manner.
+Disadvantage of Excel:
+Data will be slow compared to Propety File..
+
+POM:Object repositary or Element repositary
+It is used to store collection of webElement
+Automation rule says no data must be hard coded, so locators are stored
+in specific resouces like excel,property,Pom class...
+
+So store the locators in pom class so that data is not hard coded..
+
+
+Difference between  POM class and PageFactory class ?
+Pom  is java design pattern,where we will maintain all WebElement
+locator in organised way
+
+PageFactory is a extended version of POM class in which we will use
+initElements method which is used to initialize the Webelement with 
+respect to driver...
+
+SalteElement Refrence exception can be handfled by using
+@FindBy
+@FindBys
+@FindAll
+
+Difeerence between @FindBy, @FindBys,@FindAll?
+@FindBy 
+It will handle the single element as well as multiple element.
+Single element if we handle we have to use WebElement
+Multiple  element if we handle then we have to use List<WebElement>
+
+@FindBys:
+It is similar to 'and 'operator
+@FindBys({@FindBy(locator="value"),@FindBy(locator='value')}))
+
+@FindAll
+It is similar to OR operator
+@FindAll({@FindBy(locator="value"),@FindBy(locator='value')}))
+
+Advantage of Pom class
+It is Perfect for Agile ->It can handle freqent changes
+All the element are stored Page Wise so that easily maintained
+No external lib requred
+
+
+Note:
+Every Pomclass must end with Page  -> LoginTest
+Every test case must end with Test..Tc1  ->Tc1Test
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Deserilization:Converting Json into java is Deseriliaztion.
+
+
+
+
+
+
+
+
+
+
+
+VtigerProject:
+Generic Utilies/Genric LIb/Genric_Utils
+This is a package created in src/main/java
+It is used to store all genric class
+In this we store multiple methods which are not hardcoded
+Whatever methods we write must be in parameters if they want
+any data from user end
+If it is fetch any data or producing the data then it must have return type.
+return type isdeceded on based on method
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,123 @@
+Roles Ans Responsibility:
+The first thing I do is check sanity of Envirinment
+ 
+There will be a daily statnd up meeting that what we have done yesterday,what we will do today we have to explain
+If any new joiny is in our team I am also involed in giving KT to him
+Else my test lead will asign some task to me I need to perform it  for example
+My Project has certain POM supose sime CR has com so I will do changes in  that   POM 
+If CR is not come some new from is Come then I devlop the Script from Scretch
+A part odf this I am also involed in rasing isuee..  
+
+
+
+
+MOCK data::
+What is maven repositary?
+
+What are the different repositary?
+
+Local repositary  placed in local machine i.e .m2
+
+central repositary it will contains dependencies
+
+Remote repositary ? custome repositary created by orginasation for your own company
+
+Exception getting element is not loaded what we will do?
+ ->Use wait
+
+Exception getting element is not clikable what we will do?
+->refresh or switch to the layer
+this error get in google chrome not in Firefox
+
+Script working fine on mozila but not i firefox?
+
+It happens in production environment,if chrome version change then thisissue arises
+
+SSL(Secure Socket Layer) certification what is?
+We will design the class for certification then we will merge with ChromeOPtions?
+
+KeyWordDatadrivin:?
+test logic will be in form key and value
+Here we provide the mapping like login and logout
+
+What is Concurent testing?
+Doing same activity with same browser is called concurnt tesing
+Concurrency Testing is defined as a testing technique to detect the defects in an application 
+when multiple users are logged in. In other words monitoring 
+the effect while multiple users perform the same action at the same time. 
+The image below show the concurrent testing
+
+Concurrent testing is also referred as multi-user testing. Testing concurrent program is more challenging then testing sequential program, due to non-determinism and synchronization issues.
+What are the different testing techniques by which we are writing the test cases?
+ 
+ What is paradox testing?
+if the same set of test cases are executed again and again over the period of time then these set of tests are not capable enough to identify new defects in the system
+
+What is test harsness?
+
+Selenium support ____ testing?
+
+     What is troubleshooting and repraducing the issue?
+
+Differnce between testCase and TestPlan?
+What is ID in testcases?
+How to diffenctiate we have to go with automation or manual?
+
+ Difference between regression testing and smoke testing
+
+How to handle swithch frame in selenium?
+
+How to copy the images after taking sceenshot?
+
+Jenkins::
+What is jenkins and feature of jenkins?
+How we use jenkins in real project?
+
+Please Explain your peoject,Have u worked?
+Which framework are you using?
+
+JENKINS:
+What is Continues integration,Continues devlopment,Continues deployment...
+
+Continues integration means ir is a software devlopment process in this chagens are happend in software
+and are transferd in the main branch  then it is devlopment takes with   jenkins,and if
+build in generated properly then it is deployed to customer
+
+Continues deplyment means the changes are deleverd to the spscific environment
+
+What is significance of Git status?
+Which file we have done the local chnges
+We can track the changes done 
+
+What is conflict?
+Two reason
+Two seprate branches doing in same line....
+The file is deleted where we are sending...  
+ 
+How to create the pipeline?
+
+
+What ia difference between Action and Actions ?
+
+Action is a interface whearas Actions is a class
+
+With the help of actions class we can go for build all methods simultanusly..
+
+
+How to validate the colour of button is changing or not?
+
+We can validate it by using getCssValuemethod....
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

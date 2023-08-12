@@ -1,0 +1,75 @@
+		Exp Scenario Q and A
+
+- Explain something about yourself
+	Name 
+	Designation
+	Company
+	exp yrs
+	client
+
+	No of Projects
+	Domains, Tools, Platforms, Models
+
+	Roles and resp
+	Achievements/Awards
+
+	Highest Qualification
+	Family background
+	Strengths
+
+
+- Explain your projects/work experience
+	No of Projects
+	Initially I was put into Manual Project
+	We worked for ____ Client
+	he had a req for a ERP App
+	Duration
+	Team size
+	Purpose
+	ModuleList: 
+	Types of testing
+	Roles and Resp
+
+
+
+
+-Knowledge on
+ - What Different Tools you worked - ALM, Jira, Selenium WebDriver(4.2.2), TestNG, Maven, Github, Jenkins
+								Postman
+ - What Different Domains you know - Sales, Manufacturing, E-commerce
+ - What Different platforms you know - ERP, CRM, Mobile(Android)
+ - What all Different SDLC Models you worked -  V and V, Agile(Scrum)
+
+- Explain your roles and responsibilities
+
+
+- Explain what are the challenges you have faced
+
+- Duration of each sprint/projects
+
+- How many test cases/test scripts you can write per day
+
+- Whats your team size?
+
+- How many builds you were getting/week?
+
+- Names of ppl in your organisation
+
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

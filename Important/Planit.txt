@@ -1,0 +1,10 @@
+My self Abhishek Singh I am having 3.9 years of
+Experience in IT industry. My current role is for
+Automation in which I need to convert the Test Cases into Test Script.
+In my current project I  am handing Cucumber with Hybrid framework and I have also handled TestNG with Hybrid Framework  in which I am well versed with Hybrid Framework from scratch with Git Hub and Jenkins.
+I have also handled experience of Postman and Rest Assured API.
+
+https://github.com/Abhikes/Planit.git
+
+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
+  

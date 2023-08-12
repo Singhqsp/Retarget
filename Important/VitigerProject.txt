@@ -1,0 +1,616 @@
+Comments in Ecllipise
+
+//-->Single line comment
+
+/*
+
+   MiltiLine comment
+
+*/
+
+/**
+*
+*  It will provide the proper information of methods and classes
+*  when we utilize
+*
+**/ 
+Step1:
+Create the UtilityMethods
+
+We created four types of utility methods
+WebdriverUtility->All webdriver reusable methods were there which will be used in our project
+JavaUtility->All java related reusable methods are there which will be used in our project
+
+PropertyUtility->All Property File related reusable methods are there which will be used in our project
+
+ExcelUtility->All Excel related reusable methods are there which will be used in our project
+
+Step2:
+Create a POM pages in different packges:
+ Login Page Pom class create
+
+ Home Page Pom class create
+
+
+
+
+
+
+
+Reports:
+There are two types of report
+High level report
+Low level report
+
+Low level report:
+This report is genrated by testNG
+This report provides the basic information
+So overcome we go for High Level report
+
+HIgh level report:
+
+In high level report it generates the 
+1-pii chart
+2-We can attach the screenshor 
+3-We can also costomise it
+
+
+Two mainly prefered high level report  are
+
+Allure report 
+Extent report
+
+Extent report:
+It is mostly used report in Company  and it provides the grafical reperesentation
+TestNG support html so report will be gerated in html format
+
+->Extent report configuration is done in either in Baseclass or Listner
+
+To use Extent report we reqire dependency
+   ExtentReports 
+
+
+After adding dependency we will three classes:
+
+ExtentSparkReporter  ->It is used to perform basic configuration of report
+ExtentsReports->I will provide system information in report
+ExtentTest-->This class will perform test script analysis...
+
+
+flush()-->It is a mendatory nethod to cosolidate all the test cases in one report
+
+getAbsolutePath:
+It will procide the path of the file:
+
+
+
+Maven:
+In maven if we create class ending with test in src/test/java then bu using maven test it is going to execute
+by pom.xml without surefirePlugin...
+
+If there is no congiguration with testNG.xml then the class ending with test will execute...
+
+
+If I want to execute only one class by using maven then We will type  -Dtest=classNameTest test
+                                                                                                                      ------------------------------
+If we want to ececute two classes then  -Dtest=className,className test
+
+If we  want to execute the class and in that perticular methods 
+       -Dtest=className#methodName
+
+
+
+Maven Parameters:
+Sometimes there will be the requrement that we need to padd the data by using Maven
+And according to that data the script is going to execute
+
+
+  -Durl=xyz
+  mvn -Dtest=DummyClassTest test -Durl=xyz -Dun=admin -Dpw=manager
+
+
+GitHub:
+It is a Centralised  distributed repositary which is based on cloud management
+
+In GitHub we maintain our source code in place 
+In GitHUB we maintain our Automation framework and CRS Document
+
+Git:
+ It is a local repositary which is installed with our Ecllipse
+
+GitBash:
+It must be installed externally to execute git commands throush cmd prom
+
+Advantage of FitHub Cloud:
+Since it is a cloud based repositary so no need to maintain hardWare and
+Software 
+
+Cloud means we will what we use
+
+GitHub can handle conflict
+Jenkins can easily configured with GitHUB
+It provides the history of changes done by whom..
+
+
+Important terms of GitHub
+
+Working directory
+Staging Area
+
+Local Git
+
+Github(romote repositary)
+-----------------------------------------------------------------------------
+Git  is centralised repositary
+ Why git is Decentralised Repositary:
+  Git is Decentralised repositry because,in Git before pusing the code to gitHub we have to commit the code to
+  the local repositary(Git) and make sure that code us working in local repositary then we 
+  can send the code to GitHib
+
+Usage of GitHUB in different statges:
+1-Devloper  ->Storage of source Code
+2-DevOps ->>>Storage of build version
+3-Manual Tester->Storage of CRS and Manual testCases
+4-Automation Tester->Storage of FW
+
+Basic Git Commands:
+commit
+Push
+Pull
+Merge
+Fork
+Rebase
+Pull request
+
+How to create the repositary?
+Login in GitHUB
+
+Click on new  -> Provide the repositary name->Select the checkBox with Add a README file ->Click Create Repo
+
+How to create the Token::
+Click on Profile ->Click on settings->Scroll Down and click on devlopers settings
+->Clcik on personal acess token ->Click on Tokens(classic) ->Cliclk on gerate new token->
+->Genrate new token Classic->Select all checkBox And provide the token name and click on generate token
+
+Note:
+Before Transfering to GitHUB it is mendatary to Transfer in Git..
+
+How to connect working directory to GIT ?
+Right click on the project ->Navigate to Team then Click on Share Project->Provide the Local repositary path
+->Click on Finish ->Click on Finish
+
+After Connecting reposiatry to Git we need to commit the code
+What is commit?
+It will transfer the code from Working directory  to local repositary.. 
+ How to perform Commit?
+Right click on your project->  Click on team then Click on commit
+->Make the Code from unstage to Stage which we want to transfer.
+->Provide the proper message what we are commiting..
+
+After commit we  need to push the code :
+Click on Push
+Provide the URI and usernamw with Password Click on preview->Click   preview again then clcik on Push
+
+
+
+How to pull the Project from GitHub?
+
+Right click on the project explorer then click on import 
+Click on Git 
+Click on clone uri
+Provide the URI with UN and PWD the Click on next ,next and finish..
+
+
+What is Git Conflict?
+When two more more TE try to make changes in  same repositary simmultainusly ,THE first is trying to 
+push the code will not face any issue but when second user is trying to push the code we will
+get Git conflict..
+So Git conflict  can arise while pull as well as Push...
+So to overcome this issue we need to aware before sending
+
+Merge :
+
+When other Team member send there code to the subBrach and from tha subBrach TL is gpoing to review
+it and then merge to master Branch
+
+Collabrator:
+When we Collabarate our repositary to any other person means we are giving full accesibilty for our repositary
+
+Commit:
+Commit will copy the fw from working directory to local repositary
+Push:Push will copy the code from nloval repositary  to gitHub repositary
+
+Import+clone+URI
+Import will get the fw from global repositary to the local sysytem 
+clone URI will create the folder same name as local URL in local system.
+
+Merge:It will merge the branch with master
+
+Pull:
+Pull will help us to update the FW according to the GitHUB repositary
+We can pull the fw from Gitub to our local repositary
+
+Fork:Fork command will create  a copy of repositary from differnt gitHub account to our Github account
+
+
+
+Rebase:
+When there are multiple branches to merge then when use rebase to merge all branches at a same time 
+with master
+
+
+
+Jenkins:
+Jenkis is a CI/CD tool used by Devlopes,Devops,Automatio tester
+CI->Continues integration
+CD->Continues Devlopment,Dentinues Deployement,Continues Dilivery
+
+Why we use jsnkins in Automation?
+Process of Build creation:Continues Devlopment
+Process of installing the build in testing environment ->Continues Deployment
+Process of checking the new frature with old feature is called Contines Integration
+Process of delevering the buildd in Productio Enviroment is called Continues Delivery..
+
+Note:
+Java 11 is must in a System
+
+How to download jenkis:
+Go to google and type jenkins download
+click on the first link then click on jenkins java package
+copy the war file and keep it in a seprate folder and go to command prom of that folder
+Type the command 
+       java -jar jenkins.war
+
+Go to your commad prom and type url
+http://localhost:8080
+
+Copy the password from command prom and paste in jenkins
+Install jenkins Plugins 
+
+Cucumber::::
+Cucumber is simlar to TestNG
+But TestNG can  not be understand by any other person accept ATE ,
+So there was a curiosity that other people in a Company must also 
+understand it like MTE,Customer,BA etc
+So it is the best Framework Design to understand others because it is 
+written based on Scenarios Implementation 
+
+
+Jars requrired for Cucumber:
+->Junit 
+->Cucumber-html
+->Cucumber java
+->Cucmber Core
+->Cucumber Junit
+->WebdriverManager
+->Gherkins
+->Selenium java
+->TestNG
+
+To Go with Cucumber three files are requred
+feature package
+stepDefination package
+Runner class
+
+feature packge:
+In this package we will create mutiple files in which we will store the 
+scenarios with an extension of .feature file
+Here we write the scenarios in Gherkins format
+
+StepDefination:
+It is a package where we provide muliple classes and we will
+provide the implementation of Scenarios
+In this class we write the scripts
+
+Runner class:
+It is reponsible for execution in which we will perform maping between
+.feature file and StepDefination class
+
+In runner class we use @RunWith(Cucumber.class) this beause we are telling that this class is Cucumber class
+
+@CucumberOptions 
+In this we will use multiple keyword which are avialble to map all .feature file,stepDefination,Runner class
+Multiple keywords are present here
+feature  ->Where exactly my feature file is available we provide here the path..
+glue ->In this we priocide  the stepDefination package and it willl automaticaly map with Scenario 
+implementation 
+dryRun->It will check weather mapping between your stepDefination class and .feature file is proper or not.
+
+   dryRun->true   It will check the mappling
+   dryRun=false   it will not check the mapping
+
+monoChrome ->We can read the output in readable format
+
+
+
+DataDriven in Cucumber:
+->Simple DataDriven
+->With Exapmple +Scenerio Outline
+
+Simple Data Driven:
+This dataDriven We go to the scenario and we write the data directly in 
+scenario..
+
+Scenario Outline with example
+In the ablove Simple Data Drivin we can fetch only one data but with
+Scenario Outline we can fetch  multiple data..like DataProvider
+
+Hooks in Cucumber:
+In this every scenario need to be segregated according to test Cases
+like smoke and Regression
+
+It is simlar to group execution of testNG
+
+Here we provide anotion with every scenario
+Then in runner class we will add tags "keyWord"
+ 
+  tags = "@Smoke"
+
+   tags = ~ "@Smoke"
+  ~Exclude the test Scenario
+Exclude this anotion from Scenarion
+
+@Before and @After
+
+@Before->It will excute before execution of given when and then
+@After->It will excute adter execution of given when  and then
+
+TagHooks in cucumber:
+Hooks Tage is given to excute for that perticular scenario
+
+
+How to Cunfigure Runner class With testng.xml:
+Add dependency of Cucucmber-testNG
+In runner class inherit one class that is AbstractTestNGCucumberTests
+Create one testNG.xml and provide the packegename.ClassName
+If we will run it will not excute beacuse we are runing @CucumberOption imported 
+with JUnit so we have to import with testNG
+Note:
+Now if we will run the Runner class normally it will not excute because we imported @CucumberOption
+with testNg so import with JUnit
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

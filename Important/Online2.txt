@@ -1,0 +1,2749 @@
+
+
+ ->API
+   ->Manual API->We will do by using postman
+  ->Automation->We will do by using RestAssured
+                             ->FrameWork of RestAssured
+
+->
+   Automation project by using Hybrid FW
+                    ->This we will do vtiger Project
+ 
+ ->GitHUB
+ ->Jenkins
+
+Cucumber or BDD fw
+
+
+API:
+Checking the Feature funtinality of application without UI is called APi 
+
+Checking the Feature funtinality of application without presentation layer is called APi 
+
+If presentation layer is not there then API is acting like a presentation layer for API testing.
+
+Types of API
+Communication level API
+Coding level API
+
+Communication level API:
+The kind of API which exist in the form of webservices
+
+Coding Level API:
+The kind of API which exist in the form of jars  
+
+Every jar which we use is one API,which is stored in our GitHub
+
+
+WebServices:
+Whenever two application want to communicate with each other we requre WebServices.
+
+When App. want co commuicate with server we require webServices
+
+
+
+Ques-When http can communicate with server why we require Webservices?
+->Because http dependencies consumes huge memeory compare to webservices  
+
+TrickQues:
+What is difference between API and webSedrvices?
+
+API:  It is used to acess the feature present in server or application
+Webservices: It is used to store and transfer the data from one app to another app.
+
+Both API and WebServices are paralley depenedent to each other
+
+URL:
+It statnds for Unified resouce locator
+  It is a unique indent used to locate reouces in a server
+     
+    https://www.flipkart.com/
+
+URI:
+It statnds for inified reouce identifier
+It consist of logical and seqential charcter though which we can reach to end point of the Web Apllication
+ 
+ https://www.flipkart.com/mobile-phones-store?fm=neo%2Fmerchandising&iid=M_a420a30c
+ 
+ URI is written after question mark which is the end point of the WebApplication.
+
+
+https://www.google.com
+
+https://www.google.com/?gps
+
+Note:
+Every API exist in the form of URI but every URI is not the API 
+
+
+Advantage of APIs:
+Reusibility of API is possible
+API are platform independent
+API helps to communicate between two application
+Version updation affet to every aplication
+
+Resouce:
+Static WebPage Resource
+Dynamic WebPage Resource
+
+Static WebPage Resource:
+When user send the request to the server then in response we will get the same data
+again and again.
+
+Dynamic WebPage Resouce:
+When we send the request to server the response well change every time  is called
+Dynamic web Resource..
+
+
+API can be devloped in two format:
+SOAP API
+REST API
+
+SOAP API:
+It stands for simple object acess protocol.
+If api consumes a weservices  devloped in xml language then it is called SOAP API
+
+REST API
+IF API consumes the webservices devliped in JSON language then it is called
+REST API
+It statnds for Representation state transfer..
+
+
+Advantage of JSON over XML:
+1- In XML we can store and transfer the data in String format whereas JSON we
+    can store and transfer Object,Array,int,etc
+2-XML provides in String dataType whereas JSON provides multiple datatype like
+   Array,Object ,String etc
+3->XML is complex to understand whereas JSON is easy
+
+4-JSON is faster then XML
+
+What is JSON?
+It stands for Java Script ObjectNotation.
+It is the advanced version of JavaScript
+ "Student" :{
+                     "name":"Raja",
+                     "rollNum":22,
+                     "age": 18,
+                      "Sub":"Java",
+                       "gender":"Male"    
+                   }
+            
+JSON stores the data in the form of key:value pair
+Every key:value pair is seperated by   ','
+Every key:value pair is one entry
+{ }---->It is considered as an Object
+Last entry we never provide the ', '
+Key must be always in String format
+
+
+How to use Array here?
+
+  "Student":{
+                       "phone":[12345,322332,32323 ]
+ 
+                 }
+
+[ ] -->It is considerd as an array
+
+        
+->Object inside Object is possible  
+
+   "Employee":{
+                          "name":"Abhi",
+                          "EmpID":223,
+                          "sal":1000,
+                          "designation":"SAE",
+                            "skills":{
+		           "manual":"---*",
+                                          "SQL":"-*",
+                                          "Automation":"--------*",
+                                          "JAva":"--*"
+
+                                       }   
+
+                       }
+                     
+
+[
+    "Stud1":{
+                    "name":"A"
+                },
+   "Stud2":{
+                    "name":"B"
+                },
+   "Stud3":{
+                    "name":"C"
+                }
+
+
+]
+
+
+
+Conclusion:
+
+Object inside Object---->Valid
+Object inside Array--->Valid
+Array inside Object---->Valid
+Object inside Array---->Valid
+
+Request And Response:
+
+Request:
+When client send any work to perform in server is called request..
+
+There are four imporatnt parameters requires in request.
+1-URI
+2-HTTP methods
+3-Content Type
+4-Payload Data
+
+1-URI:
+https://www.google.com/searcg?q=ipl
+
+https->protocol
+
+www.google.com->Domain Name or server name
+
+search->Resuoce Path
+
+?=ipl
+    After question mark what ever we write is  querry String  
+
+What  is Protocol?
+When ever two application want to communicate with each they requre 
+some rules and regulation to communicate with each other.
+
+Or 
+
+It is a agrement though which two application can comunicate with other
+
+
+There are two most frequently used  protocol
+https
+http
+
+
+Server:
+ It will take the request from the client and it will reach to the webaplication
+and it will perform the opertion and return back to the client
+
+Resource Path:
+It is a perticular path to acess the required webresource present in server
+
+It starts after  '/' and before '?'
+
+Resouce path we can also say as module or feature name
+
+Querry String:
+It is a sequece of charecter which provide required information
+
+
+HTTP methods:
+It is a compulsory paramter  in request header.
+->HTTP methods decide what type of work request need to perform in
+    server.
+There are following HTTP methods which we use
+1->GET
+2->POST
+3->PUT
+4->Patch
+5->Delete
+
+1->This method is used to fetch the data from server
+       example Indigo flight search
+2->POST-The method is used to add or insert data inm server.
+     Example:Booking the flight with required information
+3->Delete- This method will delete the data from server
+4->PUT->PUT means update the data fully in the server
+
+5->PATCH->It means update the data partially inside the server
+
+
+
+
+ContentType:
+It is not compulsary parameter for request
+Beacuse get and delete method do not requre content to send whereas 
+post,put,patch requres content
+
+In content tyep we send some data that needs to be written in server
+
+PayLoad:
+What type of actual data in KB,MB or GB we send the data to server 
+
+Response:
+
+Status Code:
+It is the indication of server weather server perform the request in proper
+way or not acording to the request
+
+100
+200
+300
+400
+500
+
+100-:[101,102,103,......110]
+This status code we get when request is not reach to the server..
+Example:
+             10 or 12 result
+
+200:[201,202,203....210]
+The task alloted to server is sucessfully done then we get 200 series ststus code
+
+
+300:[301,302,303....]
+We get 300 ststuc code when there is involment of two or more server and the first server
+is responding while the other is not reponding.
+
+400:[401,402,403]
+When there is any spelling mistake or internet issue then we get 400 series
+ststus codes...
+
+500:[501,502,503....]
+We get 500 ststus code series when request is reching to the server but
+server is not reponding...
+
+Note:
+100 and 300 we will get rearly mainly we will deal with 200,400 and 500
+ststus code
+
+
+
+Now lets Strat Acutal API testing:
+Why we neeed nodeJS?
+It will provide the free API for testing
+
+How to install nodeJS:
+In google type nodejs download
+Click on the first link
+Click on windows installer .msi file
+Go to the download and keep the downloded nodeJS in seperate folder.
+Perform normal installation steps....
+
+How to check wether nodeJS is installed or not?
+Go to cmd prom
+
+node --version
+
+After installation of NodeJS we have to go npm Lib:
+
+npm lib automatically install with nodejs
+
+To get the free API we require json server also:
+Json server is same as real time server so we will also json server
+
+Now we will download JSON server using npm::
+Go to the cmd prom where we pasted the NodeJS and type the command
+  npm insall -g json-server     ->It will install json server in my system
+
+Now to install JSON-server we type the following command in cmd prom
+
+         json-server --watch db.json
+
+
+
+Can we acess API through browser?
+Yes we can but it is not recomended because we can not perform any execution
+or validation here.
+
+
+Why Postman is needed to test the API?
+
+1->Beacuse it will provide the http methods
+2->Here we can perform the validation of response
+3-here we perfrom multiple excution
+4->Cache memory never creates a issue
+
+How to install postman in system?
+
+Go to google type postman download
+then click on first link
+Click on 64 bit of postman
+
+
+How to use PostMAn:
+Step1:
+Create a workSpace by providing the proper name
+Stpe2:
+Create a Collection(Here project is called as Collection)
+ Create a collection by clicking on Create new Collection by providing the name
+Step3:
+Create a folder(Which is similar to package in ecllipse)
+ 
+To create folder  we will click on three dots of collction and click on new foder
+
+Step4:
+Create a request which we need to perform in our server
+ to create request we need to click on three dots of folder and click on ADD request
+
+
+http methods utilization:
+Get:
+To use Get methods we require only url ,which we will copy and paste
+
+Post:
+->To use Post method we require url as well as content which we need to write in BODY.
+->Click on body then click on Raw ->Then click on JSON
+
+Put:
+->To use put method we require url as well as content which we need to write in BODY.
+->Click on body then click on Raw ->Then click on JSON
+->We require end point to update the data     
+
+Delete:
+To use Delete methods we require only url ,which we will copy and paste
+And also we requre end points
+
+
+Validation of Response:
+
+There are multiple validation present in API:
+We need to valiadte the 
+
+Status code
+Headers
+Cookies
+ResponseTime
+ResponseBody
+
+
+So to perform validation  or assertioni n postman we require
+  pm-library and also require JavaScript methods
+
+
+The Lib here called as Chai Assertion lib if we want to perform validation
+                                     -------------------
+
+Here there two waus to the javaScript funtions
+1-Normal Funtion
+2-Arrow Funtion
+
+1-Normal Funtion
+         
+            pm.test("TestName",funtion()
+                         {
+                              assertion
+                         }
+            );
+
+2-Arrow Funtion
+        
+              pm.test("TestName",() =>
+                                         {
+            		         assertion
+                                         }
+                     
+);
+         
+Validation of Status Code:
+
+pm.test("Validate StatusCode",function()
+      {
+        pm.response.to.have.status(200)
+      }
+
+);
+
+Validation og Response Time:
+pm.test("Response time is less than 200ms", function () {
+    pm.expect(pm.response.responseTime).to.be.below(200);
+});
+
+This all methods will be present in snippets of PostMan
+
+Now We will validate the headers:
+Note:
+We can validate the ststic content only like date,time can not be validated 
+because they are dynamic content 
+
+Check that perticular key is present in header or not?
+
+pm.test("Content type header is present",()=>
+   {
+     pm.response.to.have.header("Content-Type")
+   }
+);
+
+pm.test("Pragma and ContentLength is present",()=>{
+    pm.response.to.have.header("Pragma")
+    pm.response.to.have.header("Content-Length")
+});
+
+
+Validation of Given Value in Headers:
+
+pm.except("ContentType Header Validation")
+
+
+
+pm.test("Content-Type header Validation",()=>{
+
+   pm.expect(pm.response.headers.get("Content-Type"))
+
+   .to.eql("application/json; charset=utf-8")
+   
+});
+
+pm.test("Pragma Validation in Headers",()=>{
+
+   pm.expect(pm.response.headers.get("Pragma")).to.eql
+   ("no-cache")
+
+
+
+});
+
+
+Now we will Validate the Response Body:
+------------------------------------------------
+So here we will create our own Json File in notepad 
+and We will give the extension as .json..
+
+{
+     "Stud1":{
+  		"id":1,
+ 		 "name":"Raja",
+ 		"phone":"21211",
+  		"courses
+
+":["Java","Selenium"]
+                 }
+}
+
+To validate the body we first store the response in one variable..
+
+const jsonData=pm.response.json();//Storing the response Body in one variable
+console.log("Hello");//It will print the data in our console
+
+console.log("Json Body Response"+jsonData);
+
+pm.test("Validation Of JsonBody is Object",() =>{
+ 
+  pm.expect(jsonData).to.be.an("Object");
+
+});
+pm.test("Validation of Id is number",()=>{
+   pm.expect(jsonData.id).to.be.a("number");
+
+});
+
+pm.test("Validation of name is String",()=>{
+   pm.expect(jsonData.name).to.be.a("String");
+
+});
+pm.test("Validation of Id is number",()=>{
+   pm.expect(jsonData.id).to.be.a("number");
+
+});
+pm.test("Validation of Courses is Array or not",()=>{
+   pm.expect(jsonData.courses).to.be.an("Array");
+
+});
+
+note:
+const is data dataType same Var is also a DataType to store data
+-----                                         ----
+Now we will Validate the JsonBody Key value  data::
+
+const jsonData=pm.response().json();
+
+pm.test("validation of Value in ResponseBody", () => {
+
+     pm.expect(jsonData.id).to.eql(1)
+     pm.expect(jsonData.name).to.eql("Raja")
+     pm.expect(jsonData.phone).to.eql("21211")
+     pm.expect(jsonData.courses[0]).to.eql("Java")
+     pm.expect(jsonData.courses[1]).to.eql("Selenium")
+
+
+
+    
+});
+
+Chaining process in PostMAn:
+Running all your request Simultaniously is called as chaining process
+In chaning process we can see all the test Output pass or fail
+
+How to perform it?
+Click on three dots of collection
+We will click on run Collection
+Here we can provide the itaration and delay
+and then click on Run
+
+pre-requesite
+First pre-reqisite script will execute then Request then Response and in last
+tests will ececute
+
+
+There are three level in this
+Collection level
+Folder level
+Request level
+
+Variables in PostMan:
+Global VAriable
+Environment Variables
+Collction variable
+Local variable
+
+Global Variable:
+If we declare any variable as global then we can acess it anywhere within 
+in a same workspace..
+
+Environment Variable:
+http://localhost:3000dev/posts
+int x=20;
+http://localhost:3000qa/posts
+int x=30
+http://localhost:3000pro/posts
+int x=0
+
+Acess through perticuler workspace but we need to switch perticalr 
+environment
+
+
+
+Practise
+
+https://reqres.in/
+
+Complex Json :
+If we get compex json then finding path is trick so we must use here JSON path finder tool
+
+How to find JSON path finder tool:
+Go to google and type JSON path Finder tool
+                                        -------------------------
+Copy the json Script and paste  in tool and go to the perticular key..
+
+Note:
+We should never copy x from path
+                                      ---
+
+
+Authentcation and  Authorizaruion:
+
+Authentication means providing proper credential to login to the application amd check wether user exist or not
+
+Autorization means after authentication provideing the access to the perticular user in Application is called
+Authorazation
+
+There are multiple Authoration in our postman:
+1-No auth
+2-API key
+3-Bearer Token
+7-Basic Auth
+4-Digest Auth
+5-OAuth 1.0
+6-OAuth 2.0
+
+
+->No Auth:
+There is no Auth for this API
+
+->API key
+In this devlipers will provide the key and value which we will
+provide in our API key
+->Basic Auth:For this we will get username and password to 
+    acess the API..
+    https://postman-echo.com/basic-auth
+     
+    usename:postman
+    password:password
+
+
+Digest Auth:
+Disest Auth is similar to basic  Auth only the difference is for
+Encryption 
+In Basic Auth data is not encrypted where as in Digest Auth
+Data is Encrypeted
+Here also we reqire UN and PWD
+
+OAuth 1.0:
+This typy of Authorization is used for high Security
+
+Here we need to provide the Consumer Key, Consumer secret,Acess token and Acess secret
+
+
+CRUL and Swagger:
+
+Swagger:
+
+It is a intractive document
+Intractive document means it is a non static document in which we update and also we can execute the APIs
+Swagger document is going to prepared by Devlopers
+Swagger we can say also as a tool in which Document is prepared
+
+
+D/f between swagger and postman:
+Swagger is used to exlorer the API but postman is used to test the API for testing
+Swagger we can not put any validation but in postman we can perform validation
+Swagger we can not save the result but in postman we can save the result...
+
+Note:
+After devloping the API devlopers will share the swagger Document
+
+
+CURL:Client URL
+When we will excute the API form swagger then we will get Curl in response
+
+What is CURL?
+It is a consolidated data in which we will have body,parameter,URI,url
+
+Copy the curl and paste in  postman
+In postman go to import and paste the Curl
+
+If we paste the curl no need to provide the url,uri,parameter,body 
+
+Genration Random Numbers:
+
+const randNum=Math.floor(Math.random()*1000+1);
+console.log(randNum)
+
+Generate Random String:
+var randStr="John"+Math.random().toString(36).substring(2);
+console.log(randStr);
+
+In Post We given body as
+
+{
+  "id":{{id}},
+  "username": "{{un}}",
+  "firstName": "{{fn}}",
+  "lastName": "{{ln}}",
+  "email": "{{email}}",
+  "password": "{{pwd}}",
+  "phone": "{{phNum}}",
+  "userStatus": {{us}}
+}
+
+const randNum=Math.floor(Math.random()*1000);
+console.log(randNum)
+
+var randStr="John"+Math.random().toString(36).substring(2);
+console.log(randStr);
+
+pm.environment.set("id",randNum);
+pm.environment.set("un",randStr);
+pm.environment.set("fn",randStr);
+pm.environment.set("ln",randStr);
+pm.environment.set("email",randStr+"@gmail.com");
+pm.environment.set("pwd","12121");
+pm.environment.set("phNum","123443");
+pm.environment.set("us",0);
+
+How to Run the request in Command prom::
+
+To run in command we reqirer the tool NewMan tool
+
+Reqrirement for newMan is NodeJs +npm must install:
+
+How to install newman:
+open cmd prom
+npm install -g newman
+
+How to Excute Collection in cmd Prom:
+My collection is not present in my System so to transfer Collection in my System following Steps reqired
+->Click on the three dots of collection
+->click on Export
+->Select the recomended version of Collection and Click on Export 
+->Now save the file in your System in .json extension...
+
+Now Steps to excute the .json File in our System,
+
+Open the cmd Prom Where we saved the File
+Write the cmd
+  newman run Filename.json
+
+How we can genrate the report of our Request:
+
+First we need to install reporter.html
+
+npm install -g newman-reporter-html
+
+Now open the cmd prom and type the code to genrate the report
+
+newman run Filename.json -r html     
+
+We will get the Folder where report will be present
+
+
+
+Rest Assured
+It is used to verify the API with the help of java Lib
+Java lib will act like headless in which we will send the request and
+we will get response
+With the help of Rest Assured we can handle the http methods,responses,
+Ststus Code,Status time, etc
+
+Pre requisute of Rest Assured:
+Maven
+Java 11 
+TestNG
+
+Dependencies reqired for Rest Assured:
+->rest assured
+->json-path
+->json
+->gson
+->testNG
+->JavaFaker
+->Jackson-DataBind
+
+
+Rest Assured have many http methods
+Get,Post,Delete,Put(mainly)
+
+Rest Assured follow Gherkins language of Cucmber
+
+given() 
+when() 
+then()
+
+given()->It is a precondition before sending the request 
+                content-type,add  auth,add param etc
+
+when()->Here we provide the http methods
+                 Get,Post,Put,Delete
+
+then()->
+         Validation status code,extract the response,extract response body
+           It can be used for multiple validation
+Note:
+If we will try import then it will not import beause it requires static Import
+To get static import we need to go Google and type Rest Assured Documentation 
+then Click on the first link
+Scroll down and click on getting started 
+Then copy the static import and paste in your class
+All the packeges which we copy paste must be ststic
+
+import static io.restassured.RestAssured.*;
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
+
+
+@Test(priority = 2)
+	public void getSingleUser()
+	{
+		given()
+		
+		
+		.when()
+		  .get("https://reqres.in/api/users/2")
+		
+		.then()
+		.statusCode(200)//Validate the status code
+		//It will print all the response in our console
+		.body("data.first_name",equalTo("Janet"))
+		.log().all();
+	}
+	
+	@Test(priority = 1)
+	public void createUser()
+	{
+		//To store data we will use HashMap beacause it stores the data in the form of Key and Value
+		HashMap hm = new HashMap();
+		hm.put("name","tom");
+		hm.put("Job","Triner");
+		given()
+		//What type of Data we are passing
+		.contentType("application/json")
+		.body(hm)
+		.when()
+		 .post("https://reqres.in/api/users")
+		 .then()
+		  .statusCode(201)
+		  .log().all();
+		  
+		
+		
+	}
+	
+	//@Test(priority = 3)
+	public void updateData()
+	{
+		HashMap hm = new HashMap();
+		hm.put("name","jerry");
+		hm.put("Job","Clever");
+		
+		given()
+		.contentType("application/json")
+		.body(hm)
+	   .when()
+	    .put("https://reqres.in/api/users/2")
+	    
+	   .then()
+	    .statusCode(200)
+	    .log().all();
+		
+	}
+	
+	//@Test(priority = 4)
+	public void deleteData()
+	{
+		given()
+		
+		.when()
+		 .delete("https://reqres.in/api/users/2")
+		 
+		.then()
+		  //.statusCode(200)
+		  
+		 .log().all();
+	}
+}
+
+How to perticular Id which is created at the Time of Execution:
+
+public class FetchId {
+	int idnum;
+	@Test(priority = 1)
+	public void createUser()
+	{
+		//To store data we will use HashMap beacause it stores the data in the form of Key and Value
+		HashMap hm = new HashMap();
+		hm.put("name","tom");
+		hm.put("Job","Triner");
+	  idnum=	given()
+		.contentType("application/json")
+		.body(hm)
+		.when()
+		 .post("https://reqres.in/api/users")
+		 //It will store the id of jsonBody
+		 .jsonPath().getInt("id");
+	  System.out.println(idnum);
+}	
+//After fetching the id we can use it as a End point of the request..
+
+How to fetch the data from External File and Create the data:
+
+
+
+
+How to pass the querry parameter and path parameter?
+
+->qureey paramter and path parameter is given pre-requisite
+->pathParamter we specify with single Curly braces in URI
+->Both querryParameter and pathparameter we can provide the data in Key:Value pair
+->If we provide the querry parameter and pathParameter then data 
+    we send automatically at the time of
+    Request(Data is not hard Coded)
+   https://reqres.in/api/users?page=2&id=5
+    
+  pathParam 
+   users 
+   
+   queeryParameter
+     Page=2
+     id=5
+
+
+How to validate the cookies and headers:
+
+In validation of cookies and headers somtimes they are dynamic so 
+if it is dynamic we need to fetch at the execution..
+
+If we Want to fetch Multiple values of cookies:
+@Test
+	public void multipleCookiesHandle()
+	{
+		Response res= given()
+		
+		.when()
+		.get("https://www.google.com/");
+		
+		  Map<String,String> mulcookies= res.getCookies();
+		 //if we want to print all the keys of your map then we use .keyset();
+		 System.out.println(mulcookies.keySet());
+		 for(String k:mulcookies.keySet())
+		 {
+			 System.out.println(res.getCookie(k));
+		 }
+		  
+		
+		
+		
+	}
+
+Validation of Headers:
+Validation of headers whicle providing direct headers value
+@Test
+	public void m1()
+	{
+		given()
+		  .when()
+		  .get("https://www.google.com/")
+		  
+		  .then()
+		  //Single Validation
+		  .header("Content-Type","text/html; charset=ISO-8859-1")
+		  .and()
+		  .header("Content-Encoding","gzip")
+		  
+		  .log().all();
+          }
+
+
+
+Validating Single headers by Response
+
+	@Test
+	public void m1()
+	{
+	   Response res=	
+			   given()
+		  .when()
+		  .get("https://www.google.com/");
+		  
+		  String hedValue=  res.getHeader("Content-Type");
+
+		  System.out.println(hedValue);
+		  Assert.assertEquals(hedValue,"text/html; charset=ISO-8859-1");
+		  
+		  Reporter.log("Content type validation Done");
+		  
+		  }
+
+
+Note:Cookies store the data in Map in the form of Key and value pair whereas Headers
+Store the data in Headers Datatype the  form Key and Value
+
+Print All the headers And Validate:
+
+@Test
+	public void m1()
+	{
+	   Response res=	
+	                   given()
+		  .when()
+                                .get("https://www.google.com/");
+	       //Headers is a datatype which stores all the headers of response
+	       Headers myhed=  res.getHeaders();
+	       
+	     //Here we used getName and getvalure to print the key and value of headers
+                      for(Header h:myhed)
+	      {
+	    	  System.out.println(h.getName() +" "+h.getValue());
+	      }
+		  
+
+		  
+	}
+
+
+Validation Of Body in response:
+
+First we will see how how to validate single body in "then" section
+
+@Test
+	public void singleDataValidate()
+	{
+		given()
+		
+		.when()
+		 .get("http://localhost:3000/store")
+		 
+		.then()
+		  .statusCode(200)
+		  .body("book[2].title",equalTo("Sayings of friction"))
+		  
+		  .and()
+		  
+		  .body("book[1].author",equalTo("Abhi1"));
+		 
+		 
+		 
+		 
+	}
+
+
+Validation of Body using varaiables:
+Sometimes we will have a typical scnerio in which we will first store the data 
+then we need to validate
+So to validate more effective way we will use varables
+varaibles store is more preferd bacause we can resuse in future and
+we can perform addtional validation
+@Test
+	public void m1()
+	{
+		Response res= given()
+		
+		.when()
+		
+		.get("http://localhost:3000/store");
+		//It will print the value of Body in response
+		System.out.println(res.jsonPath().get("book[0].category"));
+		
+		//We are going to store the value of response
+		String data= res.jsonPath().get("book[0].category").toString();
+		String name= res.jsonPath().get("book[2].author").toString();
+		Assert.assertEquals(data,"reference");
+		Assert.assertEquals(name,"Abhi2");
+		Assert.assertEquals(res.jsonPath().get("book[2].price").toString(),"1500.5");
+		
+		Assert.assertEquals(res.getHeader("Content-Type"),"application/json; charset=utf-8");
+		
+}
+
+How to fetch all the title from thar perticular Json Response?
+
+Sometimes we will get the scenario that we need to validate from all the values
+then we will fetch all the values by providing key
+
+How to fetch all the values:
+Store the response in Response refrence variable
+Then Check the response is JsonObject or JsonArrray and acording to it create
+the Object
+In Object pass asString() because we need to convert response into String
+
+Then again follow your jsonbody Response and use the forloop and Procede further
+
+
+Note:
+
+   then()
+  
+   if I do log.headers()->It will provide only headers
+   if I do log.body()->It will provide only body
+   if I do log.all()->It will provide full response
+   if I do log.cookies()->It will provide only cookies
+
+Serialization And Deserialization:
+
+Serialization -->Java(Pojo)----->json
+Seserialization-->Json  --->Java
+
+
+Serializtion:Coverting java into json is called Serialization
+
+To perform serialization we have to go for ObjectMapper class which
+we need to create the Object
+we also used the not static method that is
+writerWithDefaultPrettyPrinter().writeValueAsString(pj)
+
+Deserialization:
+Coverting json in java is called as deserilization.
+Yo perform deserilization we will go for ObjectMapper class in whic we will
+Create Object of it
+Then we will go for non ststic method readValue(From where to read,where to pass that Data)
+
+Authoraization:
+There are multiple Authrization present in Rest Assured
+
+Basic Auth:
+DigestAuth:
+PrimitiveBasic  Auth->Combination of both Basic and Digest is called 
+as Primitivebasic Auth
+It provides more secyrity then Digest Auth
+Here also we require Un and pwd
+
+All the above authorization were based on username and password
+
+Every API which is desigen it will have there own Authorization
+
+If the API are very complex and high Security is there then we go for
+Auth 1.0,2.0
+
+
+
+If the API is present in Github then Github genrates token  which token we
+will use our script and we can utilize it
+If we want to use it then we will go for Bearer Token authoration
+
+
+OAuth1:
+It is used in more complexity and for secured API
+In OAuth1 we will get consumer key,Consumer secret code,Acess Token,Token Secret
+
+OAuth2:
+
+Here only we require acess token
+
+Project:
+We go for framework beacuse java executes line by line so our
+test Cases will  be dependent so to change the execution flow we 
+for framework
+
+Rules to design FW
+Data sholud be never Hard Coded
+If any reusibility of data or block or methods are there then we keep in 
+one place and we will use it multiple times.
+
+What type of data we keep in property file?
+The dara which is common through out the project we keep in 
+property file..
+Data is kept in key value pair
+
+
+Why we keep the data in Propert file only?
+Property file is more preferef bacause it is lighter in weight...
+
+
+Disadvantag of property file?
+
+Data is not organised in sequential manner...
+
+Where we keep our test Data?
+Data which is specific to only test Cases is called test Data
+Like ->Organisation name
+Contact Name
+Test Data I have kept in excel Sheet...
+Excel sheet Stores the data in Row and Column(cell) wise
+Here Data is stored in well Organised manner.
+Disadvantage of Excel:
+Data will be slow compared to Propety File..
+
+POM:Object repositary or Element repositary
+It is used to store collection of webElement
+Automation rule says no data must be hard coded, so locators are stored
+in specific resouces like excel,property,Pom class...
+
+So store the locators in pom class so that data is not hard coded..
+
+
+Difference between  POM class and PageFactory class ?
+Pom  is java design pattern,where we will maintain all WebElement
+locator in organised way
+
+PageFactory is a extended version of POM class in which we will use
+initElements method which is used to initialize the Webelement with 
+respect to driver...
+
+SalteElement Refrence exception can be handfled by using
+@FindBy
+@FindBys
+@FindAll
+
+Difeerence between @FindBy, @FindBys,@FindAll?
+@FindBy 
+It will handle the single element as well as multiple element.
+Single element if we handle we have to use WebElement
+Multiple  element if we handle then we have to use List<WebElement>
+
+@FindBys:
+It is similar to 'and 'operator
+@FindBys({@FindBy(locator="value"),@FindBy(locator='value')}))
+
+@FindAll
+It is similar to OR operator
+@FindAll({@FindBy(locator="value"),@FindBy(locator='value')}))
+
+Advantage of Pom class
+It is Perfect for Agile ->It can handle freqent changes
+All the element are stored Page Wise so that easily maintained
+No external lib requred
+
+
+Note:
+Every Pomclass must end with Page  -> LoginTest
+Every test case must end with Test..Tc1  ->Tc1Test
+
+
+Listners
+
+Reports:
+It is very importanty part of our fw beacuse it acts like a proof for all the execution done..
+There will be two types of report 
+High level report
+Low level report
+
+High Level report:
+The report which is genrated by TestNG is HLR 
+This report support HTML
+->In this report we will find total of script executed
+->Number of testCases passed,failed,skipped
+->Reson of failure
+
+Low Level Report
+This type of report we need  to provide some external dependencies and we have to do its implementation
+with Listner.
+
+We donot prefer High level report because it will not provide 
+Pii Chart
+we can not customise it
+We can  not attach the screenshotg
+Very simple reporting format is there
+
+So to over this drawback we prefer Allure Report or Extent Report
+
+Extent Report:
+It is very popular reporting format which is preferred by most of the Companies
+It has three major classes:
+ExtentSparkReporter class
+ExtentReports class
+ExtentTest class
+
+ExtectSparkReporter:It is mainly used for the basic configutaion and also used to attach the path of the file,,
+
+ExtentReports: It is a main class Which will system information in report
+
+ExtentTest:This class will check the script level anaysis..
+
+Configutaion of Extent Class:
+In my project we have configured Extent report with Listner Implementation class
+Listner will monitor the Project
+flush() is a very madatory part at the end as it will consolidate all test excution status and generate the final report.
+ 
+Maven:
+It is also called as Build management tool,Build Testing tool,Build Dependency tool
+Simlar to maven there were another tool(ANT and Gradel) is also running but it is not prefered beacuse maven can genrate 
+the Build
+
+Maven is mainly used for
+
+Build Creation Process: Process of converting the souce code into any executable format by using mvn packages
+in command prom.....
+Build Testing Process-->Since multiple devlopers will contribute at the same time and in same project,so we
+need to check here the compilisation issue and if build is broken we will use \
+mvn Compile
+mvn Test
+Build Deployment
+Process of instaloling the build in testing server we need to deploy the build for that we use
+mvn install
+mvn Deploy
+
+
+Why maven is used in Automation testing?
+In Automation Maven is used for testing the application with current frameworkby executing the old test Script.
+
+When Multiple ATE are working with same project then thre might be a issue that any ATE given wrong code
+which causes build failure so after Updation of our POM classes will will test the Maven Project
+By proving
+mvn clean
+mvn compile
+mvn test
+mvn install
+
+
+Where we will get the failed TestCases in our project?
+We will get in test-Output folder we will have one file i.e testng-failed.xml
+
+Note:
+In maven project if ant className ending with 'test' then Automatically maven life cyccle will execute it... 
+
+How to Run maven with command prom?
+To check maven is isatalled we will tye mvn -version
+
+If We write "mvn test" in command prom then the classes which are ending with 'test' are GOING TO EXECUTE.. 
+
+How to execute specific test classes using Maven?
+  
+  mvn -Dtest =ClassNameTest test
+
+This command will navigate to the project and it will compare all the classes with given and if mathing is found
+it will execute
+Here -D stands for data.
+
+When ever we want to load the perticular class then -Dkey=value and in this syntax key is test  and value
+is className.
+
+How to excute more then one classes using command prom?
+
+mvn -Dtest=ClassanameTest1,ClassName2Test test
+
+How to excute seecific method of that perticular class?
+
+mvn -Dtest =ClassNameTest#methodName test
+
+
+Parameterzation in Maven::
+
+How to read data from commond line to testScrpt?
+Here we have to go for maven parameterzation like -Dkey=Value
+What ever data we want to provide like un,pwd,which browser to open we ill prove with Commond prom..
+->
+->
+Why we have to read the data from commond line?
+Sometimes we will get the situation where customer would want to excute
+the Project by using different browser,different environment or
+with different credentials,so customer do have the knowlege
+of FW so he can not do the chages there so for such type of
+situation we will prefer Pramerterzation in Maven
+
+Now if we want to Excute BatchExecution.xml or CrossBrowsingExcution.xml then we requre surefire plugin
+
+
+
+SureFire plugin is used toperfrom mapping between testng.xml and pom.xml
+
+
+
+
+GitHub:
+Git
+GitHub
+How to work with Git and Github in Eclipse
+Commit
+Push
+Pull
+Braching
+Merging
+Fork
+
+
+Company Process in GitHUB:
+Team Lead
+1-Create new project
+2-Crete local (git) repositary he will devlop the framework
+3-Add the files to staging area
+4-Push the  Framework in GitHub...
+
+He will call all the team Member and he will say FW is ready 
+Now we can start Automation....
+
+Team memeber:
+1-Team members  fetch the FW form Github to Local repo(git)...
+2-Now they import the project from  git to workSpace(working directory)
+3-They will add and modify the feature and add codes 
+4-Team memebers are going create new branch and they are going 
+to send Code to Remote Repo by using Ecllipse
+   ->Add files to statging area
+   ->Commit the file from local repo to Staging
+   ->From Staging push the code to Remote Repo
+5-When Team members will send the code to lead They will request for 
+PR(pull request ) to review
+
+
+Team Lead
+
+1-He will review the code and merge the code to master branch
+
+
+How to generate Token in gitHUB?
+Click on profile and click on settings.
+Scroll down and Click on Devloper settings
+Click on personal acess token and click on Clasic
+Click on new Token then click on Token classic..
+After clicking on all chcek box click on Genrate Token
+
+
+Execution Flow to tranfer to GitHub repositary
+
+Working Directory to GIT
+Right click on the project ->Naviagate to team->Click on share project
+->Click on Create(I is going to crete the
+path of Local Repositary(Git) and My project Copy will be Stored There).
+
+Now we will transfer form Git to Staging area
+Right Click on your project->Click on Team->Click on Commit
+->Tranfer the file  from Untage to Stage which we want to send then
+    Click on commit(Provide the Commit message)
+->We will click on Push
+->Give the URI then username and provide the token and click on preview
+->Click on preview THEN click on push
+->For Confermation give username password again
+
+
+
+How to Import Project from Github to My Ecllipse wrokspace:
+
+Right click on your project then click on import
+Click on Git then click on Projects  then click on Projects of Git
+Click on next the click on Clone URI then Click on next
+Provide the URI and username and password
+Click on next next next anf Finish..
+
+After doing changes in your project we will send the code again to from git to Github..
+
+
+How to pull the data in a same Project?
+Right click on your project then click on Team
+
+How to do merging in Github?
+As a Team memeber we can never send the code to the master Branch so we should create our own Branch and 
+from there we can send the Updated Project which Team Lead will review it and he will send to master branch
+
+How to create the new Branch in Git HUb?
+Right clickon your project-> Click on Team->then click on swithch to then click on new Branch->Provide
+the name of Branch then do the same process
+
+
+
+Note:
+Before pushing the data we need to pull the data from Github if any changes happen in repositary then
+only we can oush the data
+
+
+Git Conflict:
+When two more ATE try to make changes in the same repositary
+simultainusly,then the first user trying to push the code will not face any issye but when second ATE try to do
+Push at same place then we get Git conflict.
+When Conflict will arise it will give us rejctin message.
+
+Fork Command:
+It is a command which will create a copu of repositary from differnt github account into your git account
+
+Collabarator:
+It means giving same acess of your repositary to other users if Github..
+
+Usage of Github in different stages:
+Devlopers->Will use ot to store the source code.
+Devops->will use for storage of build version
+MTE-> will use to store CRS and SRS document and also Test cases.
+ATE ->Storage of FW;
+
+
+Basic Git commands used here:
+commit: commit will copy the fw from working dictory to local repositary.
+
+Push: Push will copy the Fw from local repositary to Global repositary
+
+Pull:
+Pull will help us to get changes pushed into FW,we can use pull only when project is existing in working
+Directory
+
+ReBase:When their mulyiple braches existing to be merged,we can use rebase to merge all the branches 
+at same time with master.
+
+
+Note:
+->Poject must be send to local repo first then only it can send to global repo..
+
+->Projectmust be always pulled before pusihng
+
+Jenkins:
+How to start jenkins
+java -jar jenkins.war
+
+Go to Browser ->http://localhost:8080/
+
+Jenkins is a CI/CD which is used by Devloper,Devops,ATE
+CI->Continues Integration
+CD->Continues Devlopment,Continues Deployment,Continues Delevery..
+
+Beasically 
+
+Jenkins used in Automation for
+Build Creation
+Check the Intrgration issue between old feature and new Feature.
+Dilever the tested Build in production Environment
+
+
+Baically we use jenkins CI  featuere here to Run the new feature with 
+Old Fw then  many of the test case will fail 
+And we will get the Imapact area..
+
+
+After Install plugin Provide the username password and mailID and click on
+Finish
+
+Configuration in Jenkins:
+Click on manage jenkins then click on pluginManager
+Click in Avilable plugin then search for Maven Integration and 
+GutHub Integration
+After clicking on the checkbox install without restart click..
+
+After Installing  both plugin we need to install Git in our System?
+
+How to install Git in our system?
+In google type Git download then click on the first link 
+Then click on windows then click in 64 bit..
+Go to download section double click on Git Sysmbol
+Now do the normal installation by clicking on next..
+
+Now we will go to global configution of jenkins and provide the path
+of java,Maven,Git
+
+
+After providing the path we will Create a new Project
+Click on new Item then click on Maven Project
+
+
+In jenkins there are three ways to genrate the Build
+(Job of jenkins)
+->On Demand
+->On Shedule
+->Poll SCM 
+
+Abhisinghbtm@gmail.com
+
+
+
+On Demand:
+Whenever customer Demands for execution we will trigeer the execution with Build now Option
+There is no proper time for this,When ever customer demand we need to execute
+
+On Schedule:
+Specifying the exact time duration when the execution should start is called in schduling
+While cinfiguring this Job we need to provide build Periodically in Build trigger
+Here Jenkis follow some sheduling format
+
+
+Poll SCM:(Source Code management)
+Poll SCM will detect the changes made in spicified git and it will start the execution in specifed time..
+Here Sedule will be usually H * * * *
+In then whenever there is any change  are detected like push commit it will trigger the job
+Usually master branch will be configured for this type of sheduling
+
+
+Cucumber:
+TestNG is called as TDD 
+Cucumber is called as BDD(Behavioral Driven Devlopment)
+Cucumber is used to devlop the framework like TestNG
+
+Now lets comapre Traditional Devlopment and BDD:
+From Client we will getBRS
+It will given to devloper and Tester
+Communication Gap will be there between tester and devlopers
+In TDD more focus of devloper and Testter will be given to Architecture,
+Tools,Skills etc
+Communication laggiging will be there between them so chances of 
+delevering wrong product
+
+BDD
+Here comminucation will be done with every stage with BA,Dev,Tester,ATE
+
+Here comunication is strong here beacuse of .feature file...
+
+Why BDD is prefered then TestNG?
+In TestNG if we write System.setProperty("key","value"); It will be
+only undersstandble by ATE so to overcome this issue we go for Cucumber.
+
+In cucumber three files are very important
+>feature File
+>StepDefination
+>Runner class
+
+>feature File->In feature file we are going to write the n number of scenario of our module.
+>StepDifination>In this multiple classes are there in which we provide implementation of all the
+scenario..
+>Runner class->In this we perform the mapping between stepdifination and .feature file
+
+Cucumber follows Gherkins language i.e Given ,When ,Then ,And .
+
+How to convert Maven Project into Cucumber Project?
+Download the Cucumber in your Ecllipse by going to Ecllipse Market Palce similar to TestNG.
+After downloding Ecllipse must restart..
+Now Right click on the project then navigate to Cucumber then click on convert to Cucumber Project
+
+In Runner class we have multiple keywords
+1-feature
+2-glue
+3-dryRun
+4-Monochrome
+5-tags
+6-plugin
+
+feature-This keyword we use to provide the path of .feature file where my steps are present 
+glue-It is a keyword which we provide the path of stepdefination package where my  classes are present
+which provides the implemenation method of steps
+
+
+
+
+DataDrien testing in Cucumber:
+SimpleDataDriven
+WithExample + Scenario outline
+
+Simple DataDriven
+Simple Datadriven can be done without examples
+
+DataDriven with Examples
+
+In dadaDriven with expample we use Scenario Outline with Examples
+
+
+In cucumber How to genrate html report:
+
+So to generate html report we need to add plugin in Runner class with folder name where to store it.. 
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+		features = "./src/main/java/FeatureFile/Add.feature",
+		glue = "stepdefination",
+		plugin = {"html:report/t1.html"}
+		
+		
+		)
+
+public class Runner {
+
+}
+
+
+How to execute multiple feature file simultaniously?
+If we want to execute all the .feature file Simultaniusly the all .feature file and Stepdefination and Runner class
+must be in same package
+
+
+What are the differnt types of Expression in Cucumber?
+There are two types of Expression in cucumber 
+Regular Expression
+Cucumber Expression
+
+
+Regular Expresion:
+Regular expression is also called as regex
+Ragex are used to check weather search pattern is avilable in given string or not
+In regular experesion it start with ^ and it will end with $........
+
+
+Cucumber Expresion
+Scenario:
+Case1
+    Given My name is ABhi
+   
+   @Given("My name is ABhi")
+Case2:
+    Scenario:
+       Given My name is "Abhi"
+     
+    @Given("My name is {string}")
+   
+
+->In cucumber expression we never use ^ and $
+->If we give {string} means some string data is coming from steps
+->if we give{word}   means some string data is coming from steps
+->if we give{ } it can take any data
+->if we give{int} it can take int data in expression..
+
+Tags in Cucucmber
+Tags in cucumber are used to execute perticular scenario of cucumber 
+We can provide tags in .feature file and we can our own name
+In Runnerclass we need to provide the 'tags' keyword in @Cucumberoption and 
+then provide perticuler tag name 
+
+
+In tags if we use 'not' then except that perticular tag all are going to execute
+  
+   tags = "not @smoke"
+ 
+
+In tags if we use 'and' then where ever it finds both tag it will execute
+  
+   tags = "@smoke" and @regression
+ 
+In tags if we use 'or' then if any one tag found it will execute
+  
+   tags = "@smoke" or @regression
+
+
+Hooks in cucumber:
+There are mainly two hooks which we use in cucumber:
+@Before
+@After
+
+If we use the above two hooks then it is going to execute with every scenario:
+
+
+Ques-If we want to execute my hooks only with that perticular scenario
+@Before("@first")
+@After(@First)	
+
+@BeforeStep and @AfterStep:
+It will execute with every steps of given scenario present in .feature file..
+
+Hooks and Tags we can use simultainously 
+@BeforeStep("@smoke")
+
+@AfterStep("@smoke")
+It will only execute with smoke steps
+
+Orders in hooks:
+If there  are multiple @Before and @After is there then we can execute in our 
+order
+@Before(order=0)
+@After(order=0)
+@Before(order=1)
+@After(order=1)
+@Before(order=2)
+@After(order=2)
+
+Can we use hooks,tags and Orders simultainusly?
+Yes we can use both simultainusly
+@Before(order = 1,value ="@first")
+@After(order = 1,value ="@first")
+
+How to execute cucumber from Maven?
+By using pom.xml we can execute cucumber project by maven
+
+Here the class eneding with test is directly going to execute
+
+So Runner class  we have to end with RunnerTest
+
+Note:
+It is compulsary to add the surefire plugin to execute the runner class
+
+Executing maven by using command prom
+mvn clean 
+mvn compile
+mvn test
+
+Maven Tags overring in command prom
+In cucumber if we write mvn test then all test classes will execute but if we want to execute perticular tags
+if that feature file we will use this
+mvn test -Dcucumber.filter.tags="@smoke"
+
+Company norm default tags:
+@wip
+@ignore
+@dev
+The above tags which we see is according to the company sandard
+@wip->This tag is used when devloper has devloped the .feature file scenario be testes has not tested it
+@ignore->This scenario do not want to execute
+@dev->Scenario has been written by tester but devloper has not deloped the perticular scenario
+
+How to execute json,html,xml report in Cucumber:
+In runner class we have @cucumberOptions where we will add plugin
+@RunWith(Cucumber.class)
+@CucumberOptions(
+		plugin = {"html:report/t2.html",
+				
+		          "json:report/t3.json",
+		          "junit:report/t4.xml"
+		},
+		
+		features = "./src/main/java/FeatureFile/multipleTags.feature",
+		glue = "stepdefination"
+		//tags = "@smoke"
+		
+		
+		
+		)
+
+public class RunnerTest {
+
+}
+
+
+
+
+Exception in 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Deserilization:Converting Json into java is Deseriliaztion.
+
+
+
+
+
+
+
+
+
+
+
+VtigerProject:
+Generic Utilies/Genric LIb/Genric_Utils
+This is a package created in src/main/java
+It is used to store all genric class
+In this we store multiple methods which are not hardcoded
+Whatever methods we write must be in parameters if they want
+any data from user end
+If it is fetch any data or producing the data then it must have return type.
+return type isdeceded on based on method
+
+Note:
+We can never save the file with ":"...
+
+Extent Reports Configuration:
+Its configuration will be done is Listners
+
+We mainly use three classes:
+ExtentReports class
+ExtentTest
+ExtentSparkReporter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

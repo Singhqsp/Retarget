@@ -1,0 +1,594 @@
+ _Cucumber:
+It is BDD(Behavioral Driven Devlopment) or framrwork/tool which support BDD..
+
+Different BDD tools avilabkle in market:
+Like Cucumber there are many other tools to 
+support BDD like 
+SpecFlow,Behave,Jasmine(javaScript) etc
+
+Cucumber support many programing language like:
+Java,Python,.net,PHP,JavaScript etc...
+
+Now Lets Compare BDD with Tradition devlopment..
+
+Taditional Devlopment
+From client side we get BRS
+IT will ge given to devlopers and testers
+In traditional Devlopment the communication is lagging
+In traditional more focus of Devlopers an testers  is given to Architecture,Tools,Skills
+Count of resources time Line ..
+Since communication is laggig so may be chances are there built the wrong product
+
+BDD: 
+Here Cummunication is done in every stage with Business,Devlopers,Testers
+Communicatio is possible with the help of .feature file
+
+Lets See Feature File::
+
+Feature: Search
+Searching of various catagories should be possible along the product search..
+ 
+
+Sceanari: Search for the product for Books catagory..
+Using search funtinality.User must be able to search the books
+
+Given I visited the website as Guest user
+When I select the books option dropdown
+And I click on the search Icon button
+Then I should see the books Page loded
+And I should see "Books at Amazon" as heading
+
+
+How real time scenarios work?
+So in real time we will have th Peopduct Owner who is goinf to understand th Curstomer requrement and that 
+requirement he is going to covert it into UserStory.
+Now UserStory is going to be given to Devlopers and testers
+ Now tester and devloper are going to understant the userStory so they will try to and if they have any dought then
+they ask from PO and Po will clarify their doughts....
+Now according to the understanting Tester will write the feature file and devlopers will devlop the featutre funtinaly of an
+application..
+Now Testest will test the Funtinality by the feature file whic is approved by PO..
+
+BDD Amigios?
+There are three amigios of BDD->Bussiness,Devlopers,Tester
+There are called as amigios beacuse they have a good comunication between them
+
+In Cucmber we can prepare multiple .feature files and in feature file we write the scenarios......
+
+Feature:User Login
+Registerd user should be able to login acess acount detials..
+
+Scenario:Login with valid credentials
+Given user navigate to login page
+ When user enters the valid email adress 
+And Enters valid password 
+And click on login button
+Then User should login sucessfully
+
+Scenario:Login with invalid credentials
+Given user navigate to login page
+When user enters the invalid email adress 
+And Enters invalid password 
+And click on login button
+Then User should login sucessfully
+
+Scenario:Login with valid emailAdress and invalid password
+Given user navigate to login page
+When user enters the email adress 
+And Enters invalid password 
+And click on login button
+Then User should login sucessfully
+
+
+Then we should go for StepDifinations
+
+Now in real time we must have the Idea of stepDefination and .feature file so
+try to create Manually.. 
+
+
+
+@Given("^User navigates to Register Account Page$")
+This is called as called as regular expression
+
+This is called as Cucumber expression 
+@Given("User enter firstName {string} and lastName {string}")
+
+Note we can not have regular expression and Cucumber expression simultaniously
+
+Feature: User Registraion
+
+Scenario: Register with mendatory fields
+Given Iser navigates to Register Account Page
+When User Enters FirstName "Arun" into the first Name field
+And Enters the lastName "Motoori" in the lastName Field
+And Enters Email adress "xyz@gmail.com" into the Email field
+And Enters telephone "12345643" into the Telephone field
+And Enters password "12345" into the password foeld
+And Enters password "12345" into the comfirm filed
+And select privacy policy field
+And Clicks on Continue button
+Then Account should get Succed
+
+Scenario: Register with all  mendatory fields
+Given Iser navigates to Register Account Page
+When User Enters FirstName "Arun" into the first Name field
+And Enters the lastName "Motoori" in the lastName Field
+And Enters Email adress "xyz@gmail.com" into the Email field
+And Enters telephone "12345643" into the Telephone field
+And Enters password "12345" into the password foeld
+And Enters password "12345" into the comfirm filed
+And select privacy policy field
+And Clicks on Continue button
+Then Account should get Succed
+
+Scenario: Register without providing  mendatory fields
+Given user navigates to Register Account Page
+When User donot enter details into any fields
+Then Warning messages should displayed for all mendatory fields
+
+Now createl all StepDefinations manually
+Note:
+If we are giving any {String} then no need to provide the ^ and $ symbol..
+
+
+
+Tidy Gherkin Plugin:
+It is a plugin which is used to convert .feature file into step Defination:
+This plugin we nned to add in browser only so to dwonload we need to go to google
+and type Tidy gherkins plugin download
+Then click on the first link
+Then click in Add to chrome
+
+How to run multiple feature file in one click:
+It can be done be creating all .feature file, runner file ,stepdifination in one package and just write the code
+@RunWith(Cucumber.class )
+
+public class Runner {
+
+}
+
+
+How to use "Background" Gherkins Keyword?
+In a .feature file if any step is common for every scenario then we can use Background keyword here..
+It will be written on the top 
+Background:
+Given open the application
+Advantage of it is that it will reduce the lines of code in .feature file
+
+How ro use scenario outline and examples in gherkins keyword -Data driven testing?
+
+How to generate html report ?
+@RunWith(Cucumber.class )
+@CucumberOptions(
+		plugin = {"html:target/t1.html"}  
+		
+		)
+
+
+public class Runner {
+
+}
+
+Regular Expression in Cucumber:
+Regular expression is also called as Regex.
+Regex are used to check weather search patter in avilable in the given String.
+->  .*Raja.*
+->String: Ny name is Raja Singh 
+  	 public class Demo {
+	
+                                public static void main(String[] args) {
+		boolean data=Pattern.matches(".*Raja.*","My name is Raja SIngh");
+		System.out.println(data);
+	}
+
+}
+//Conclusion ->The above class will check weather the regex is matching with Given String
+
+Now Case 2:
+ public class Demo {
+	
+                                public static void main(String[] args) {
+		boolean data=Pattern.matches("Java","Java");//true
+		boolean data=Pattern.matches("java","Java");//false
+	
+		System.out.println(data);
+	}
+
+
+//Conclusion:It is Case Sensative
+
+
+
+Case3:
+So if we are not sure weather it will be upper or lower case then we will go 
+for[jJ]
+
+public class Demo {
+	public static void main(String[] args) {
+		boolean data=Pattern.matches("[jJ]ava","Java");
+		System.out.println(data);
+	}
+
+}
+
+Case4:
+So if we are not sure weather the perticular letter is upper
+or lower then  we will go 
+for ->[jJ]
+
+public class Demo {
+	public static void main(String[] args) {
+		boolean data=Pattern.matches("Ye[sp]","Yes");//True
+		System.out.println(data);
+	}
+
+}
+
+Case5:
+. can be any thing
+//Since only one . is there so only one charecter can be any thing
+public class Demo {
+	public static void main(String[] args) {
+		boolean data=Pattern.matches(".es","Yes");//True
+                                  boolean data=Pattern.matches(".es","sdffdes");//false
+
+		System.out.println(data);
+	}
+
+}
+
+Case6:
+
+public class Demo {
+	public static void main(String[] args) {
+		boolean data=Pattern.matches("[0-9]es","5es");//True
+                                  boolean data=Pattern.matches(".es","sdffdes");//false
+
+		System.out.println(data);
+	}
+
+}
+//In the above number it be any thing from 0 to 9..
+//Same way lower alphabet and upper alphabet
+
+
+
+Case6:
+boolean data=Pattern.matches("[0-9A-Za-z]es","5es");//True
+The first letter can be any thing from 0 to 9 or A to Z or a to z
+
+Case7
+  boolean data=Pattern.matches("[^0-9]es","5es");//True
+  Except 0 to 9 it can be any thing
+Case8:
+  boolean data=Pattern.matches("Y[^aeiou]s","Yes");//True
+   The middle later must not be part of aeiou                                                            
+Case9
+     boolean data=Pattern.matches("//dam","5am");//True
+    //d means number is from 0-9
+   same way id I give
+   //D means except 0-9
+
+Case10
+boolean data=Pattern.matches("[0-9A-Za-z_]es","5es");//True
+Here I given _means it will match with  '_' also
+So intead of this [0-9A-Za-z_] we can write [\\w]
+
+Case 11
+boolean data=Pattern.matches("My","My name is Abhi Singh");//False
+boolean data=Pattern.matches("My","My");//True
+boolean data=Pattern.matches("^My.*","My name is Abhi Singh");//True .* means   any number of Charecters
+Here ^ means starts with My
+
+Case 12
+boolean data=Pattern.matches("Singh$","My name is Abhi Singh");//False
+boolean data=Pattern.matches("Singh","Singh");//True
+boolean data=Pattern.matches(".*Singh$","My name is Abhi Singh");//True .* means   any number of Charecters
+Here & means it is ending with Singh
+
+
+Case13:
+     ^My.*Arun
+     boolean data=Pattern.matches("^My.*Arun","MyAbhi");//True
+   But insted of this if I give .+ then It means minimum one charecter must be there
+     boolean data=Pattern.matches("^My.+Arun","MyAbhi");//false
+    boolean data=Pattern.matches("^My.+Arun","My Abhi");//True
+
+
+Case14:
+   If I use .? means it must be repeted 0 numer of times
+
+
+Cucumber  Expression:
+@When("User enters firstname { } into the First Name field") ->it can take any thing
+@When("User enters firstname { String} into the First Name field")
+@When("User enters firstname {word } into the First Name field")
+@When(" I scored {int} runs")
+
+
+
+Can we use Cucumber exprssion and Regular Expression together or not?
+No we can not use Cucumber and regular expressio simultainusly
+
+When we get DubliCate StepDefination Exception?
+Note
+In a project if we have n number of feature file then same step can be written only in one time if we write 
+same step in different feature file it will provide the exception So keep in mind step step can not be
+dublicate
+
+When we get dublicate AmbiguousStepDefinationException?
+Thes exception is arised when there are two feature files are present  the step are same  in which one expression we are using 
+regular exception and another we use cucumber expresion.
+
+How to use comment section in Cucumber feature file?
+We can use # sysmbol for the cumment section in .feature file
+
+
+Tags in Cucumber:
+
+
+
+@all
+Feature
+@smoke  @regression @FT
+Scenario:Login with valid credentials
+Given user navigate to login page
+When user enters the valid email adress 
+And Enters valid password 
+And click on login button
+Then User should login sucessfully
+@FT
+Scenario:Login with invalid credentials
+Given user navigate to login page
+When user enters the invalid email adress 
+And Enters invalid password 
+And click on login button
+Then User should login sucessfully
+@FT
+Scenario:Login with valid emailAdress and invalid password
+Given user navigate to login page
+When user enters the email adress 
+And Enters invalid password 
+And click on login button
+Then User should login sucessfully
+
+case1:
+@RunWith(Cucumber.class)
+@CucumberOptions(
+	
+		features = "D:\\RestAssuredOnline\\MavenCucmber\\src\\test\\java\\feature\\hooksFile.feature",
+		
+		glue = "stepDefination",
+		
+		tags = "@all"
+)
+
+public class RunnerClass {
+
+}
+//In this if we add @all in .feature file abive the Feature  then we will can print all the Scenario...
+//In tags we can also use 'or' means executing this and that  both..
+    tags="@smoke" or "@sanity" 
+
+//In tags we can also use 'and' means executing if both tags are there..
+    tags="@smoke" and "@sanity" 
+
+//In tags we can also use 'not' means except that perticular execute all
+    tags= "not @sanity" 
+
+note:We can use and,not,or simultaniusly.
+
+Hooks in Cucumber:
+There are mainly two hooks in cucumber
+@Before
+@After
+Note:
+In industry we use tearDown which means close the browser
+
+
+
+How to use Tagged Hooks in Cucumber..
+In this we can use both tags and hooks simultanuisly.
+
+@Before(@register)
+public void setup()
+{
+   Sopln("Browser got opened")
+}
+@After(@register)
+{
+  Sopln("Browser got closed.")
+}
+
+The above will only run with @Before  and @After   ->@resgister tag
+
+
+
+
+
+
+
+@BeforeStep an @AfterStep
+
+How to use @BefterStep an @AfterStep in Cucumber?
+If we write @BeforeStep and @AfterStep then it is going to execute in each and every steps of of every sceanario which
+is present in that .feature file...
+
+
+@BeforeStep("@Smoke")
+@AfterStep("@Smoke")
+Then is will only execute with that perticular scenario where @smoke tag is avilable..
+
+Multiple  Hooks and there Order:
+Here we will use 
+@Before(order=0)
+@Before(order=1)
+@Before(order=2)
+@After(order=1)
+@After(order=2)
+@After(order=0)
+
+Hooks with value Attribute:
+@Before("@smoke")
+@After("@smoke")
+Then is will only execute with that perticular scenario where @smoke tag is avilable..
+ 
+Now we are using order and value attribute simultaniusly then we will use
+@Before(order=0,value="@smoke")
+@After(order=0,value="@smoke")
+
+DataTable in Cucumber:
+Feature: 
+
+  Scenario: 
+    Given Register Page must be opened
+    When Fill the Credential with DataTable
+      | FN   | RRR           |
+      | LN   | SSS           |
+      | MAIL | xaa.gmail.com |
+    Then Registes data must be created
+
+
+package stepDifination;
+
+import java.util.Map;
+
+import org.testng.Reporter;
+
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class DataTable1 {
+	
+
+@Given("Register Page must be opened")
+public void register_page_must_be_opened() {
+ 
+	Reporter.log("Data is logined",true);
+
+}
+
+@When("Fill the Credential with DataTable")
+public void fill_the_credential_with_data_table(DataTable dataTable) {
+	
+	     Map<String, String> data = dataTable.asMap(String.class,String.class);
+	        String d= data.get("FN");
+	        System.out.println("++++++++++++"+d);
+	
+  
+}
+
+@Then("Registes data must be created")
+public void registes_data_must_be_created() {
+   
+	Reporter.log("Register page created",true);
+}
+
+}
+
+
+Note:
+It is agood practise to keep .feature file in src/test/resouces
+
+Running Cucumber Tests using Maven (Cucumber BDD - Part 37)
+We can execure the project of maven if any class is ending with Test.
+So to run this we reqire sure rie plugin.. 
+
+
+Running Cucumber by using command line and overriding it.
+In cucumber when we write mvn test in cmd line then all test ending  class will execute
+                                               ----------
+->Same way if we want to excute bperticular feature file and in that perticular tags then we will write..
+   
+   mvn test -Dcucumber.filter.tags="@smoke" 
+   
+Default tags in Cucumber:
+There are two Types in Cucumber:
+Custom Tags
+Default Tags
+Cuctom and Default tags both are user defined tags 
+But Default tags we can say we can make it as a industry statndard which are most comenly used there..
+@dev
+@ignore
+@wip
+The above tags we can give our names but these names are given as per company statandards....
+
+@dev
+We write @dev  with any of the scenario when scenario is written with testrer end but it is not devloped with
+Devloper end.. 
+@ignore:
+If any scenario do not want to execute
+@wip 
+We use this when devlopers are devloped the cide but tester has not executed 
+
+tags ="@all and not @dev and @wip and not ignore"
+It will execute all except this
+
+How to retrive scenario names into hooks:
+
+@RunWith(Cucumber.class )
+@CucumberOptions(
+		plugin = {"html:target/t1.html"},
+		features = "./src/main/java/featurePackage",
+		glue = {"hooksPackage","stepDefination"}
+		
+		
+		)
+
+Hooks will be added with every scenario...
+
+Hot to run json and xml report?
+The best report is .html only we are goig for it just for extra knowledge
+
+@RunWith(Cucumber.class )
+@CucumberOptions(
+		plugin = {"html:target/t1.html",
+				  "json:target/t2.json",
+				  "junit:target/t3.xml"
+				 
+		},
+		features = "./src/main/java/featurePackage",
+		glue = {"hooksPackage","stepDefination"}
+		
+		
+		)
+
+Note:
+In maven we get classNot found Exception then we must update the Project...
+
+
+
+What is dryRun =true?
+It is provided in cucumber options we go for this to to check the implementaion of all steps implementation
+is there ot not, if any implementation is not there then it will not execute... 
+
+
+How to publish the report in cloud?
+
+@RunWith(Cucumber.class )
+@CucumberOptions(
+		publish = true,
+		plugin = {"html:target/t1.html","pretty"},
+		features = "D:\\Personal1\\FoxCucu\\src\\main\\java\\featurePackage\\Login.feature",
+		glue = "stepDefination",
+		monochrome = true
+		
+		
+		
+		
+		)
+
+
+How to perform parallel execution in Cucumber?
+There are two ways by using 
+TestNG
+JUnit
+The basic difference between testNG and Junit is that,TestNG will run all the scenarios paralley whereas Junit will
+run .feature file parallel mode..
+
+
+
+
+

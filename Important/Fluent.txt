@@ -1,0 +1,27 @@
+//Calling the fluent wait
+FluentWait wait = new Fluentwait(Webdriver refVariable);
+
+//Provideing the time how much time it is used to wait
+wait.withTimeOut(Duration.ofSeconds(10));
+
+//User Defined polling time
+wait.pollingEvery(Duration.ofSeconds(2));
+
+//Exception provide if element not found
+wait.ignoring(TimeOutExceptio  .class);
+
+//Method to be satisfied
+wait.until(ExpectedConditions.ExpectedMethods);
+
+
+
+
+
+
+
+
+
+
+
+
+https://www.youtube.com/watch?v=clPh36ThzHI
